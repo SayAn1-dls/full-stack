@@ -89,6 +89,7 @@ backend/app/wind/             scope.py (window, cutoffs), elexon.py + ingest.py 
                               analytics.py (decision view, accuracy view, error model), schemas.py (response models), routes.py
 backend/tests/test_wind_*.py  analytics (synthetic, incl. DST days), ingest rules, API on the real snapshot; test_vercel_config.py (bundle completeness)
 frontend/src/                 App, views (Decision, Accuracy, Method), charts (Line, Bar, Histogram, Scatter, ChartCard, tooltip), scales, formatters
+frontend/e2e/interact.cjs     19 Playwright checks, run against any live instance (local, Docker or the deployed URL)
 data/elexon/wind_snapshot.json
 Dockerfile(s)                 backend/Dockerfile (API), frontend/Dockerfile + nginx.conf (web), docker-compose.yml
 ```

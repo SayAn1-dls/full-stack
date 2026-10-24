@@ -27,6 +27,8 @@ and a Heroku deployment (Vercel was chosen; the PRD says "Vercel or Heroku").
   on 2026-10-24). It is the only source of the audited bytes for 2019-2024 and of the two combined files.
 - Field definitions and sign conventions: NESO datastore schema, `https://api.neso.energy/api/3/action/datastore_search?resource_id=f6d02c0f-957b-48cb-82ee-09003f2ba759&limit=1`.
 - Bank holidays: https://www.gov.uk/bank-holidays.json (snapshot frozen in `backend/app/data/reference/`).
+- Wind app: Elexon BMRS API `https://data.elexon.co.uk/bmrs/api/v1` (swagger at `/swagger/v1/swagger.json`): the FUELHH stream (`settlementDateFrom/To`, `fuelType=WIND`) for outturn and the WINDFOR stream
+  (`publishDateTimeFrom/To`) for forecasts. Snapshot taken 2026-10-24.
 
 **D-03 The audited vintage is the input; NESO's current 2019-2024 files are not.** NESO re-published those years on 2025-04-08: hashes differ,
 embedded wind/solar estimates were re-modelled, 2024 now runs to 2024-12-31, and 2023 uses `DD-Mon-YY` dates. Using the new files would silently
@@ -121,10 +123,16 @@ and it keeps the front end to React alone (265 KB, 82 KB gzipped). Palette valid
 
 **D-33 Missing hours are shown as missing.** At a very early cutoff the newest run does not reach the end of the delivery day (a 22:30 run looks 46.5 h ahead). The API lists `hours_without_forecast`, the chart leaves them blank and a notice explains; nothing is estimated.
 
-**D-34 Vercel deployment by direct file upload, not Git.** The connected Vercel team has no write access to `SayAn1-dls/full-stack` (`repo_no_access`), so the project is not Git-linked: pushes to GitHub do **not** redeploy. To redeploy, upload again or link the repository from an account with access.
-The data snapshot's SHA-256 is exposed by `/api/health` so a deployment can be checked against the committed file. The project is `wind-intelligence` in team `tathagat-harshs-projects`, the account the user confirmed.
+**D-34 Vercel deployment from a Git source, but the project is not Git-linked.** The connected Vercel team cannot link `SayAn1-dls/full-stack` as a Git project (`create_git_project` failed with `repo_no_access`), so the project `wind-intelligence`
+(`prj_qcs8OeKGhZw870K1gz1DIPC8WiyU`, team `tathagat-harshs-projects`, the account the user confirmed) was created empty and deployed once with `create_deployment` using this public repository as the source
+(deployment `dpl_Czyqk1XsNCe8jaXSxv6TzC5bkJD2`, commit `2e6fc52`). Pushes to GitHub therefore do **not** redeploy; to ship a change, create a new deployment the same way (or `vercel deploy --prod`), or link the repository from an account with access.
+A first attempt to upload files one by one failed Vercel's SHA-1 check on a corrupted copy of the snapshot and was abandoned, with its gzip-parts loader never committed. `dataset.py` still accepts `<name>.gz` as a fallback (identical text once decompressed); production does not use it.
+The snapshot's SHA-256 is exposed by `/api/health` so a deployment can be checked against the committed file; the live value matched at the time of writing (`da46ed49...3307`). Live URL: https://wind-intelligence.vercel.app.
 
 **D-35 Docker was verified in the sandbox with local shim base images.** The sandbox re-terminates TLS and rate-limits Docker Hub, so builds used local base images that trust the sandbox CA (and a Google mirror of the same node/nginx images). The repository
 Dockerfiles are unchanged and portable; TLS verification was never disabled.
 
-**D-36 Python 3.12 is the compatibility target** (a likely serverless default); the full suite (206 tests at that point) was run on 3.12.15 in a clean container as well as on 3.13.
+**D-36 Python 3.12 is the compatibility target** (a likely serverless default); the full suite (206 tests at that point) was run on 3.12.15 in a clean container as well as on 3.13. The final 219-test run (after the last code change) was on Python 3.13.17 only.
+
+**D-37 Cache headers on the API.** The data is a fixed snapshot, so `/api/meta`, `/api/decision` and `/api/accuracy` send `Cache-Control: public, max-age=300, s-maxage=3600` (Vercel's edge strips `s-maxage` from what the browser sees, which showed `max-age=300`
+on the live site); `/api/health` is `no-store` so deployment checks are never cached. After a redeploy with a new snapshot a browser can show the old numbers for up to five minutes; the CDN cache is per deployment.

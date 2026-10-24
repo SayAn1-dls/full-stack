@@ -30,6 +30,14 @@ failure was diagnosed and the wrong side was fixed.
 | BUG-017 | test | Two assertions ended in `or True` and one test was named for a 404 but asserted a 200 | Careless edits, found on review | Replaced with real assertions; `grep "or True" backend/tests` is clean |
 | BUG-018 | test | Wrong assumption that every WINDFOR run looks 60+ hours ahead; a Playwright hover landed off-screen; a route-path assertion broke on FastAPI 0.162 internals | Assumptions about the data and tools | Reach asserted as 46.5-66.5 h from the data; chart scrolled into view; assertion via the OpenAPI schema |
 
+### Deployment (found while shipping it)
+
+| ID | Where | What happened | Cause | Fix and regression guard |
+|---|---|---|---|---|
+| BUG-019 | process | Uploading the snapshot to Vercel in pieces failed the platform's SHA-1 check | My copy of a base64 part was corrupted; the check did its job | Abandoned file-by-file upload and deployed from the public Git source instead; the unused gzip-parts loader was never committed. A bundle-completeness test (`test_vercel_config.py`) guards what the function ships |
+| BUG-020 | process | `create_git_project` was refused (`repo_no_access`) | The connected Vercel account cannot reach this GitHub repository | Empty project plus a deployment from the public Git source; the project is therefore not Git-linked and does not auto-deploy (DECISIONS D-34) |
+| BUG-021 | my own tooling | `pkill -f "uvicorn ..."` terminated my own shell (exit 144) whenever the same command line contained the pattern | The pattern matched the shell running the command | Kill by PID, in a separate command |
+
 Core cleaning logic (timestamps, zero-nulling, flags, structural NA, uniqueness, completeness) had no defect surfaced by the
 test suite. Mutation checks confirm the tests can fail: ignoring DST, dropping the `tsd` rule, filling unpublished columns with 0,
 an off-by-one threshold, and over-nulling on real data were each caught (see TEST_REPORT.md).
