@@ -55,7 +55,7 @@ def test_every_module_the_api_imports_is_in_the_serverless_bundle():
 
 def test_the_data_snapshot_ships_with_the_function_and_the_heavy_pipeline_does_not():
     files = bundled_files()
-    assert "data/elexon/wind_snapshot.json" in files
+    assert any(f.startswith("data/elexon/wind_snapshot.json") for f in files)
     assert not any(f.startswith("backend/app/data/") or f.startswith("data/raw") for f in files)
 
 

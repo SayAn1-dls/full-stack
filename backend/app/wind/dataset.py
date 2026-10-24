@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import gzip
 import hashlib
 import json
 import os
@@ -94,10 +95,21 @@ def parse_snapshot(text: str) -> Dataset:
     return Dataset(raw["meta"], actual, publications, hashlib.sha256(text.encode()).hexdigest(), tuple(times))
 
 
+def _read_snapshot_text(location: Path) -> str:
+    """The committed snapshot is plain JSON; a deployment may ship `<name>.gz` instead (identical text once decompressed,
+    so the SHA-256 reported by /api/health is the same either way)."""
+    if location.exists():
+        return location.read_text()
+    compressed = location.with_name(location.name + ".gz")
+    if compressed.exists():
+        return gzip.decompress(compressed.read_bytes()).decode()
+    raise FileNotFoundError(location)
+
+
 @lru_cache(maxsize=1)
 def load_dataset(path: str | None = None) -> Dataset:
     location = Path(path or os.environ.get("WIND_SNAPSHOT_PATH") or DEFAULT_SNAPSHOT)
     try:
-        return parse_snapshot(location.read_text())
+        return parse_snapshot(_read_snapshot_text(location))
     except FileNotFoundError as exc:
         raise SnapshotError(f"snapshot not found at {location}; run `python -m app.wind.ingest`") from exc

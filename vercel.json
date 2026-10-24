@@ -1,13 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "installCommand": "cd frontend && npm ci --no-audit --no-fund",
+  "installCommand": "cd frontend && npm install --no-audit --no-fund",
   "buildCommand": "cd frontend && npm run build",
   "outputDirectory": "frontend/dist",
   "functions": {
     "api/index.py": {
       "maxDuration": 30,
-      "includeFiles": "{backend/app/__init__.py,backend/app/main.py,backend/app/wind/*.py,data/elexon/wind_snapshot.json}"
+      "includeFiles": "{backend/app/__init__.py,backend/app/main.py,backend/app/wind/*.py,data/elexon/wind_snapshot.json*}"
     }
   },
   "rewrites": [{ "source": "/api/(.*)", "destination": "/api/index" }]
