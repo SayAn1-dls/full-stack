@@ -1,432 +1,432 @@
 1
-00:00:01,000 --> 00:00:03,212
-Hello, and thank you for your time.
+00:00:01,000 --> 00:00:03,285
+Hi, and thanks for taking the time.
 
 2
-00:00:03,362 --> 00:00:08,746
-Today I will show you the results of our pilot project, called Wind Intelligence.
+00:00:03,435 --> 00:00:09,331
+Today I'm going to show you what came out of our pilot project, called Wind Intelligence.
 
 3
-00:00:08,898 --> 00:00:12,615
-It is a web portal, made for your day-ahead buying team.
+00:00:09,482 --> 00:00:13,106
+It's a web portal, built for your day-ahead buying team.
 
 4
-00:00:14,220 --> 00:00:16,059
-Let me start with your problem.
+00:00:14,709 --> 00:00:17,104
+Let's start with the problem you face.
 
 5
-00:00:16,209 --> 00:00:20,548
-Every day, your team must decide how much power to buy for tomorrow.
+00:00:17,256 --> 00:00:21,979
+Every day, your team has to decide how much power to buy for tomorrow.
 
 6
-00:00:20,700 --> 00:00:23,408
-Wind is a big part of Britain's power,
+00:00:22,133 --> 00:00:29,036
+Wind is a big part of Britain's power, and it changes hour by hour. So you need a wind forecast.
 
 7
-00:00:23,408 --> 00:00:27,827
-and it changes every hour. So your team needs a wind forecast.
-
-8
-00:00:27,984 --> 00:00:30,771
+00:00:29,193 --> 00:00:32,170
 But new forecasts come out many times a day.
 
-9
-00:00:30,771 --> 00:00:35,079
-Which one could your team really use, at the moment of the decision?
+8
+00:00:32,170 --> 00:00:36,704
+So which one could your team really use, at the moment they decide?
 
-10
-00:00:35,234 --> 00:00:38,301
+9
+00:00:36,859 --> 00:00:40,162
 And how good are these forecasts? Can you trust them?
 
-11
-00:00:39,904 --> 00:00:45,523
+10
+00:00:41,761 --> 00:00:47,533
 In this pilot, we answered both questions, using real public data from Elexon.
 
-12
-00:00:45,674 --> 00:00:52,824
+11
+00:00:47,684 --> 00:00:55,137
 We checked 768 hours, over 32 days, against 280 forecast runs.
 
+12
+00:00:55,291 --> 00:01:00,855
+We used just two data sets, for decisions made in January 2026.
+
 13
-00:00:52,981 --> 00:00:58,398
-Just two data sets were used, for decisions made in January 2026.
+00:01:04,404 --> 00:01:07,482
+Here's the portal. This is the Decision view.
 
 14
-00:01:02,374 --> 00:01:05,454
-Here is the portal. This is the Decision view.
+00:01:07,634 --> 00:01:12,381
+Your team picks a decision time. The default is 09:20, UK time,
 
 15
-00:01:05,603 --> 00:01:10,670
-Your team picks the decision time. The default is 09:20, UK time,
+00:01:12,381 --> 00:01:16,751
+on the day before. That's when a day-ahead auction closes.
 
 16
-00:01:10,670 --> 00:01:15,270
-on the day before. That is when a day-ahead auction closes.
+00:01:16,907 --> 00:01:22,239
+Then they pick the day they're buying for. Let's take Monday, the 12th of January.
 
 17
-00:01:15,426 --> 00:01:20,869
-Then they pick the day they are buying for. Let's take Monday, the 12th of January.
+00:01:22,393 --> 00:01:28,265
+The big number is the forecast that your team would have seen: 19.3 gigawatts,
 
 18
-00:01:21,023 --> 00:01:25,959
-The big number is the forecast that your team would have seen: 19.
+00:01:28,265 --> 00:01:33,686
+on average. And it only uses what had been published by 09:20 on Sunday.
 
 19
-00:01:25,959 --> 00:01:31,642
-3 gigawatts, on average. It only uses what was published by 09:20 on Sunday.
+00:01:33,846 --> 00:01:40,275
+Now look at this tile: wind to count on. It says, plan with 15 gigawatts, not 19.
 
 20
-00:01:31,800 --> 00:01:38,200
-Now look at this tile: wind to count on. It says: plan with 15 gigawatts, not 19.
-
-21
-00:01:38,200 --> 00:01:44,680
+00:01:40,275 --> 00:01:46,784
 In similar past hours, wind came in at or above this level, nine times out of ten.
 
-22
-00:01:44,839 --> 00:01:49,922
+21
+00:01:46,944 --> 00:01:51,994
 The row below shows what really happened. Wind averaged 14.
 
-23
-00:01:49,922 --> 00:01:54,746
-4 gigawatts. The forecast was too high, in all 24 hours.
+22
+00:01:51,994 --> 00:01:57,043
+4 gigawatts. So the forecast was too high, in all 24 hours.
 
-24
-00:01:54,902 --> 00:01:59,820
+23
+00:01:57,198 --> 00:02:02,123
 This was one of the worst days of the month, so it shows the problem clearly.
 
-25
-00:01:59,820 --> 00:02:04,802
+24
+00:02:02,123 --> 00:02:07,112
 Even the safe number was a bit high, but it was much closer than the forecast.
 
-26
-00:02:06,360 --> 00:02:10,482
+25
+00:02:08,670 --> 00:02:12,730
 The chart tells the same story. Blue is the forecast.
 
+26
+00:02:12,730 --> 00:02:17,403
+Orange is the real wind. And the pink area is a normal range.
+
 27
-00:02:10,482 --> 00:02:14,915
-Orange is the real wind. The pink area is a normal range.
+00:02:17,559 --> 00:02:21,379
+If you hover over any hour, you can see the exact numbers.
 
 28
-00:02:15,071 --> 00:02:18,417
-Hover over any hour, and you see the exact numbers.
-
-29
-00:02:19,955 --> 00:02:24,195
+00:02:22,313 --> 00:02:26,684
 Every chart also has a table view, for people who like numbers.
 
-30
-00:02:24,401 --> 00:02:29,375
+29
+00:02:26,833 --> 00:02:31,838
 Your team can also see how the forecast moved during the day, run by run.
 
+30
+00:02:32,329 --> 00:02:39,586
+And if the team decides at 09:50 instead, the portal picks a newer forecast, and everything updates.
+
 31
-00:02:29,927 --> 00:02:36,695
-If the team decides at 09:50 instead, the portal picks a newer forecast, and everything updates.
+00:02:41,139 --> 00:02:44,763
+Now for the second question: how good is the forecast?
 
 32
-00:02:38,250 --> 00:02:41,631
-Now the second question: how good is the forecast?
-
-33
-00:02:41,782 --> 00:02:46,184
+00:02:44,913 --> 00:02:49,288
 Over the whole month, the forecast was too high by 1.
 
+33
+00:02:49,288 --> 00:02:53,828
+8 gigawatts on average. That's 16% of the average wind.
+
 34
-00:02:46,184 --> 00:02:50,835
-8 gigawatts on average. That is 16% of the average wind.
+00:02:53,985 --> 00:02:59,973
+It was too high in 85% of the hours, and on 28 of the 32 days.
 
 35
-00:02:50,992 --> 00:02:56,696
-It was too high in 85% of the hours, and on 28 of 32 days.
+00:03:00,128 --> 00:03:04,936
+Red bars mean the forecast was too high, and most of the bars are red.
 
 36
-00:02:56,847 --> 00:03:01,134
-Red bars mean the forecast was too high. Most bars are red.
-
-37
-00:03:02,334 --> 00:03:06,298
+00:03:05,461 --> 00:03:09,432
 The gap is biggest when the forecast is big. At 17.
 
-38
-00:03:06,298 --> 00:03:10,806
+37
+00:03:09,432 --> 00:03:13,948
 8 gigawatts or more, it was too high in every single hour.
 
-39
-00:03:10,956 --> 00:03:14,065
+38
+00:03:14,099 --> 00:03:17,153
 The forecast still beats a simple guess, like:
 
-40
-00:03:14,065 --> 00:03:18,324
-tomorrow looks like now. Its typical miss is about half as big.
+39
+00:03:17,153 --> 00:03:22,000
+tomorrow will look like right now. Its typical miss is about half as big.
 
-41
-00:03:18,477 --> 00:03:23,078
+40
+00:03:22,155 --> 00:03:26,746
 So the forecast is useful, but it leans high. On this month's data,
 
-42
-00:03:23,078 --> 00:03:28,228
+41
+00:03:26,746 --> 00:03:31,885
 fixing just the average gap would shrink the typical miss by about a third.
 
-43
-00:03:29,789 --> 00:03:34,565
+42
+00:03:33,446 --> 00:03:38,339
 The Method page explains every rule in plain words, and lists the limits.
 
+43
+00:03:38,490 --> 00:03:44,404
+This is one winter month, from one source. And the portal has no demand or price data,
+
 44
-00:03:34,718 --> 00:03:40,501
-This is one winter month, from one source. The portal has no demand or price data,
+00:03:44,404 --> 00:03:48,736
+so it tells you how much wind to count on, not how much to buy.
 
 45
-00:03:40,501 --> 00:03:44,591
-so it says how much wind to count on, not how much to buy.
+00:03:50,376 --> 00:03:54,992
+So, in short, the portal shows the newest forecast your team could use,
 
 46
-00:03:46,217 --> 00:03:50,424
-In short, the portal shows the newest forecast your team could use,
+00:03:54,992 --> 00:03:59,608
+shows how wrong it has been, and gives you a safer number to plan with.
 
 47
-00:03:50,424 --> 00:03:54,632
-shows how wrong it has been, and gives a safer number to plan with.
-
-48
-00:03:54,786 --> 00:03:59,400
+00:03:59,762 --> 00:04:04,353
 Good next steps are more months of data, then demand and price data,
 
-49
-00:03:59,400 --> 00:04:02,385
+48
+00:04:04,353 --> 00:04:07,324
 and finding out why the forecast leans high.
 
-50
-00:04:02,541 --> 00:04:05,439
+49
+00:04:07,478 --> 00:04:10,232
 Now, part two is for the technical team.
 
-51
-00:04:08,490 --> 00:04:10,531
+50
+00:04:13,294 --> 00:04:15,264
 Part two is for the tech lead.
 
+51
+00:04:15,414 --> 00:04:18,869
+I'll cover the architecture, the design, the analysis,
+
 52
-00:04:10,679 --> 00:04:14,425
-I will cover the architecture, the design, the analysis,
+00:04:18,869 --> 00:04:21,877
+the code, and how we work. I'll keep it simple.
 
 53
-00:04:14,425 --> 00:04:17,703
-the code, and how we work. I will keep it simple.
+00:04:23,491 --> 00:04:25,207
+Here's the architecture.
 
 54
-00:04:19,312 --> 00:04:21,145
-Here is the architecture.
+00:04:25,358 --> 00:04:30,340
+The front end is React with TypeScript. It shows the pages you just saw.
 
 55
-00:04:21,298 --> 00:04:25,934
-The front end is React with TypeScript. It shows the pages you saw.
+00:04:30,492 --> 00:04:35,805
+It calls a Python back end, built with FastAPI. There's no database,
 
 56
-00:04:26,086 --> 00:04:29,753
-It calls a Python back end, built with FastAPI.
+00:04:35,805 --> 00:04:39,478
+and in production only two packages are listed.
 
 57
-00:04:29,753 --> 00:04:34,902
-There is no database. In production, only two packages are listed.
-
-58
-00:04:35,059 --> 00:04:40,702
+00:04:39,635 --> 00:04:45,319
 The back end reads one data file: a saved copy of January from Elexon.
 
-59
-00:04:40,702 --> 00:04:47,070
+58
+00:04:45,319 --> 00:04:51,733
 January is in the past, so a file is fast, and it works even if Elexon is down.
 
-60
-00:04:47,230 --> 00:04:53,142
-A script called ingest can rebuild that file. It stops with an error if there is a gap,
+59
+00:04:51,892 --> 00:04:57,863
+A script called ingest can rebuild that file. It stops with an error if there's a gap,
 
-61
-00:04:53,142 --> 00:04:56,948
+60
+00:04:57,863 --> 00:05:01,751
 a conflicting duplicate, or a row it would have to drop.
 
-62
-00:04:58,559 --> 00:05:00,546
+61
+00:05:03,362 --> 00:05:05,335
 This is the key design rule.
 
-63
-00:05:00,698 --> 00:05:04,609
+62
+00:05:05,488 --> 00:05:09,382
 Each day, Elexon publishes about eight forecast runs.
 
-64
-00:05:04,760 --> 00:05:11,859
+63
+00:05:09,535 --> 00:05:16,475
 For each hour of the delivery day, we take the newest run published at or before the decision time.
 
-65
-00:05:11,859 --> 00:05:15,659
-The 09:30 run is ten minutes late, so it is not used.
+64
+00:05:16,475 --> 00:05:20,260
+The 09:30 run is ten minutes late, so we don't use it.
 
-66
-00:05:15,819 --> 00:05:19,369
+65
+00:05:20,418 --> 00:05:23,975
 This is the real function. It finds the latest run,
 
-67
-00:05:19,369 --> 00:05:23,266
+66
+00:05:23,975 --> 00:05:27,880
 at or before the cutoff, that has a value for that hour.
 
-68
-00:05:23,420 --> 00:05:27,889
-Error is forecast minus actual. Positive means too high.
+67
+00:05:28,034 --> 00:05:32,613
+Error is forecast minus actual, so positive means too high.
 
-69
-00:05:27,889 --> 00:05:31,481
+68
+00:05:32,613 --> 00:05:36,105
 Forecasts are hourly and wind is half-hourly,
 
-70
-00:05:31,481 --> 00:05:37,227
+69
+00:05:36,105 --> 00:05:41,692
 so we match start times. Other choices change the error by less than 2%.
 
-71
-00:05:38,858 --> 00:05:40,430
+70
+00:05:43,298 --> 00:05:44,796
 Now, the analysis.
 
-72
-00:05:40,580 --> 00:05:45,309
+71
+00:05:44,948 --> 00:05:49,801
 The pink range comes from past errors. We group forecasts by size,
 
-73
-00:05:45,309 --> 00:05:51,255
+72
+00:05:49,801 --> 00:05:55,904
 keep the middle 80% of the errors in each group, and blend smoothly between groups.
 
-74
-00:05:51,412 --> 00:05:57,459
+73
+00:05:56,061 --> 00:06:02,231
 The day being viewed is never used to build its own range. As a check,
 
-75
-00:05:57,459 --> 00:06:03,766
-an 80% range should hold about 80% of outcomes. In our data it holds 78%.
+74
+00:06:02,231 --> 00:06:08,753
+an 80% range should hold about 80% of outcomes. In our data, it holds 78%.
 
-76
-00:06:03,925 --> 00:06:08,985
+75
+00:06:08,913 --> 00:06:13,912
 We also compare with a simple guess: keep the last known wind the same.
 
-77
-00:06:08,985 --> 00:06:12,548
+76
+00:06:13,912 --> 00:06:17,433
 The forecast's typical error is about half as big.
 
+77
+00:06:17,588 --> 00:06:20,023
+The main limit is that it's one month,
+
 78
-00:06:12,703 --> 00:06:19,112
-The main limit: it is one month, and the range uses later days, so it does not promise the future.
+00:06:20,023 --> 00:06:24,124
+and the range uses later days, so it doesn't promise the future.
 
 79
-00:06:23,105 --> 00:06:30,104
+00:06:29,085 --> 00:06:36,191
 The API is easy to explore. FastAPI builds this documentation page by itself.
 
 80
-00:06:30,258 --> 00:06:34,447
+00:06:36,346 --> 00:06:40,765
 There are four endpoints: health, meta, decision, and accuracy.
 
 81
-00:06:36,133 --> 00:06:39,061
+00:06:41,642 --> 00:06:44,632
 Health returns a fingerprint of the data file,
 
 82
-00:06:39,061 --> 00:06:42,562
-so we can check that the live site uses the right data.
+00:06:44,632 --> 00:06:48,466
+so we can check that the live site is using the right data.
 
 83
-00:06:43,034 --> 00:06:48,879
+00:06:48,616 --> 00:06:54,294
 The decision and accuracy endpoints take the decision time as an input.
 
 84
-00:06:48,879 --> 00:06:55,795
-Bad inputs get a clear error: 404 for a day outside January, and 422 for a bad time.
+00:06:54,294 --> 00:07:01,892
+Bad inputs get a clear error: 404 for a day outside the January window, and 422 for a bad time.
 
 85
-00:06:57,449 --> 00:06:59,100
+00:07:03,573 --> 00:07:05,078
 Now, the code base.
 
 86
-00:06:59,251 --> 00:07:05,312
+00:07:05,230 --> 00:07:11,006
 backend/app/wind holds the Python. The scope file sets the January window.
 
 87
-00:07:05,312 --> 00:07:12,520
-Elexon and ingest fetch and check the data. Analytics has the maths. Routes has the API.
+00:07:11,006 --> 00:07:18,187
+Elexon and ingest fetch and check the data. Analytics has the maths, and routes has the API.
 
 88
-00:07:12,680 --> 00:07:19,296
+00:07:18,347 --> 00:07:24,737
 frontend/src has the views and the hand-written charts. data/elexon has the snapshot.
 
 89
-00:07:19,296 --> 00:07:25,290
-The docs folder and the files at the top record every decision and every bug.
+00:07:24,737 --> 00:07:30,826
+And the docs folder and the files at the top record every decision and every bug.
 
 90
-00:07:25,450 --> 00:07:30,420
+00:07:30,984 --> 00:07:35,987
 To change the time window, start in the scope file, then run ingest again.
 
 91
-00:07:30,420 --> 00:07:36,330
+00:07:35,987 --> 00:07:41,936
 To add a number, add it in analytics, then in schemas and routes, and then in the views.
 
 92
-00:07:37,949 --> 00:07:39,932
-Now, our key practices.
+00:07:43,548 --> 00:07:45,378
+Now, the key practices.
 
 93
-00:07:40,084 --> 00:07:43,594
-219 Python tests, and 19 front-end tests.
+00:07:45,529 --> 00:07:49,603
+We have 219 Python tests, and 19 front-end tests.
 
 94
-00:07:43,594 --> 00:07:49,244
-Many recalculate the numbers from the raw data, in a separate way.
+00:07:49,603 --> 00:07:55,755
+Many of them recalculate the numbers from the raw data, in a separate way.
 
 95
-00:07:49,399 --> 00:07:54,325
+00:07:55,914 --> 00:08:00,824
 We also broke the code on purpose, in eight ways. The tests caught all eight.
 
 96
-00:07:54,325 --> 00:07:57,908
+00:08:00,824 --> 00:08:04,395
 One slipped through at first, so we added a test for it.
 
 97
-00:07:58,063 --> 00:08:02,944
+00:08:04,552 --> 00:08:09,433
 19 browser checks click through the real app, including the live site.
 
 98
-00:08:02,944 --> 00:08:07,198
+00:08:09,433 --> 00:08:13,686
 Versions are pinned, and decisions and bugs are written down.
 
 99
-00:08:08,812 --> 00:08:14,597
+00:08:15,294 --> 00:08:21,271
 To run it, use docker compose up. The site opens on port 8080.
 
 100
-00:08:14,749 --> 00:08:18,799
+00:08:21,422 --> 00:08:25,416
 In production, the React build is served as static files,
 
 101
-00:08:18,799 --> 00:08:22,138
+00:08:25,416 --> 00:08:28,709
 and the Python app runs as one Vercel function.
 
 102
-00:08:22,291 --> 00:08:26,674
-Two honest notes. The Vercel project is not linked to GitHub,
+00:08:28,864 --> 00:08:33,196
+Two honest notes. The Vercel project isn't linked to GitHub,
 
 103
-00:08:26,674 --> 00:08:32,134
-so a push does not redeploy it. And there is no automatic test pipeline yet.
+00:08:33,196 --> 00:08:38,538
+so a push doesn't redeploy it. And there's no automatic test pipeline yet.
 
 104
-00:08:33,737 --> 00:08:37,337
+00:08:40,148 --> 00:08:43,574
 To finish, the limits: one month, one data source,
 
 105
-00:08:37,337 --> 00:08:41,441
-no demand or price, and the cause of the bias is unknown.
+00:08:43,574 --> 00:08:48,097
+no demand or price, and we don't know why the forecast leans high.
 
 106
-00:08:41,595 --> 00:08:46,172
+00:08:48,250 --> 00:08:52,839
 This project was built with an AI coding assistant, Claude Code,
 
 107
-00:08:46,172 --> 00:08:50,605
-from Anthropic. The voice in this video is computer generated.
+00:08:52,839 --> 00:08:57,572
+from Anthropic. And the voice in this video is computer generated.
 
 108
-00:08:50,761 --> 00:08:52,382
-Thank you for watching.
+00:08:57,729 --> 00:08:59,142
+Thanks for watching.
 

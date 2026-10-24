@@ -137,6 +137,8 @@ Dockerfiles are unchanged and portable; TLS verification was never disabled.
 **D-37 Cache headers on the API.** The data is a fixed snapshot, so `/api/meta`, `/api/decision` and `/api/accuracy` send `Cache-Control: public, max-age=300, s-maxage=3600` (Vercel's edge strips `s-maxage` from what the browser sees, which showed `max-age=300`
 on the live site); `/api/health` is `no-store` so deployment checks are never cached. After a redeploy with a new snapshot a browser can show the old numbers for up to five minutes; the CDN cache is per deployment.
 
-**D-38 Demo video (two parts, 8:54).** Part 1 is a customer pitch of the pilot results, Part 2 a tech-lead walkthrough (brief: 5 minutes each, 10 in total). The demo day is 12 January 09:20 because it shows every element
-clearly, and the narration says it is one of the worst days (even the "wind to count on" figure was 0.6 GW too high that day). The voice is Kokoro-82M (Apache-2.0, local, no text sent to a service) at 0.87 speed; it is declared as computer generated in the
-video, its description and `demo/README.md`. The video is recorded against the live site, not the local build, so it shows what the customer gets. The MP4 is not committed (24 MB); transcript, captions, YouTube description and the build scripts are in `demo/`.
+**D-38 Demo video (two parts, 9:01).** Part 1 is a customer pitch of the pilot results, Part 2 a tech-lead walkthrough (brief: 5 minutes each, 10 in total). The demo day is 12 January 09:20 because it shows every element
+clearly, and the narration says it is one of the worst days (even the "wind to count on" figure was 0.6 GW too high that day). The voice is a local neural text-to-speech male voice (Kokoro-82M, Apache-2.0, `am_michael`; no text sent to a service),
+after a first version in a female voice was rejected. It is declared as computer generated in the video, its description and `demo/README.md`, and it is not dressed up as a human recording: the brief asks for an AI-use disclosure, so
+the disclosure stays. A read-aloud script is provided for anyone who wants to record the narration in their own voice. The video is recorded against the live site, not the local build, so it shows what the customer gets. The MP4 is not committed
+(24 MB); transcript, captions, YouTube description and the build scripts are in `demo/`.
