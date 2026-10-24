@@ -1,0 +1,11 @@
+settlement_date,weekday,is_holiday_in_combined_file,is_bank_holiday_ew_recomputed,holiday_name,listed_by_govuk,govuk_snapshot_covers_date,finding
+2010-12-25,Saturday,1,0,,,False,flagged_in_combined_file_but_falls_on_weekend
+2010-12-27,Monday,0,1,Christmas Day (observed),,False,missing_in_combined_file
+2011-12-25,Sunday,1,0,,,False,flagged_in_combined_file_but_falls_on_weekend
+2011-12-26,Monday,0,1,Boxing Day,,False,missing_in_combined_file
+2016-12-25,Sunday,1,0,,,False,flagged_in_combined_file_but_falls_on_weekend
+2016-12-26,Monday,0,1,Boxing Day,,False,missing_in_combined_file
+2021-12-25,Saturday,1,0,,False,True,flagged_in_combined_file_but_falls_on_weekend
+2021-12-27,Monday,0,1,Christmas Day (observed),True,True,missing_in_combined_file
+2022-12-25,Sunday,1,0,,False,True,flagged_in_combined_file_but_falls_on_weekend
+2022-12-26,Monday,0,1,Boxing Day,True,True,missing_in_combined_file

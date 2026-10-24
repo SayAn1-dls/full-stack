@@ -1,0 +1,380 @@
+{
+  "combined_file_cross_validation": {
+    "columns_compared": [
+      "nd",
+      "tsd",
+      "england_wales_demand",
+      "embedded_wind_generation",
+      "embedded_wind_capacity",
+      "embedded_solar_generation",
+      "embedded_solar_capacity",
+      "non_bm_stor",
+      "pump_storage_pumping",
+      "scottish_transfer",
+      "ifa_flow",
+      "ifa2_flow",
+      "britned_flow",
+      "moyle_flow",
+      "east_west_flow",
+      "nemo_flow",
+      "nsl_flow",
+      "eleclink_flow",
+      "viking_flow",
+      "greenlink_flow"
+    ],
+    "columns_only_in_yearly": [],
+    "combined_rows": 279264,
+    "keys_in_both": 279264,
+    "keys_only_in_combined": 0,
+    "keys_only_in_yearly": 0,
+    "mismatching_cells_by_column": {
+      "britned_flow": 0,
+      "east_west_flow": 0,
+      "eleclink_flow": 0,
+      "embedded_solar_capacity": 0,
+      "embedded_solar_generation": 0,
+      "embedded_wind_capacity": 0,
+      "embedded_wind_generation": 0,
+      "england_wales_demand": 0,
+      "greenlink_flow": 0,
+      "ifa2_flow": 0,
+      "ifa_flow": 0,
+      "moyle_flow": 0,
+      "nd": 0,
+      "nemo_flow": 0,
+      "non_bm_stor": 0,
+      "nsl_flow": 0,
+      "pump_storage_pumping": 0,
+      "scottish_transfer": 0,
+      "tsd": 0,
+      "viking_flow": 0
+    },
+    "mismatching_cells_total": 0,
+    "yearly_rows": 279264
+  },
+  "inputs": {
+    "historic_demand_2009_2024.csv": "d278d761413366aafecbe94928748169c6469093a36ca7d9508c6f93be8da4b9",
+    "historic_demand_2009_2024_noNaN.csv": "00aae1c8000b37652931a1d839e980b044bbcaa8c04f3b4e5b8fe85f574bd63b"
+  },
+  "is_holiday": {
+    "combined_file_holiday_days": 131,
+    "combined_file_is_holiday_rows": 6288,
+    "days_where_flag_varies_within_the_day": 0,
+    "definition_used": "England & Wales bank holidays *observed* on that date (substitute days included, nominal weekend dates excluded). Python `holidays` package, UnitedKingdom(subdiv='England'), weekdays only; cross-checked against a frozen gov.uk snapshot for 2019+.",
+    "disagreeing_days": 10,
+    "disagreements": [
+      {
+        "finding": "flagged_in_combined_file_but_falls_on_weekend",
+        "govuk_snapshot_covers_date": false,
+        "holiday_name": "",
+        "is_bank_holiday_ew_recomputed": 0,
+        "is_holiday_in_combined_file": 1,
+        "listed_by_govuk": null,
+        "settlement_date": "2010-12-25",
+        "weekday": "Saturday"
+      },
+      {
+        "finding": "missing_in_combined_file",
+        "govuk_snapshot_covers_date": false,
+        "holiday_name": "Christmas Day (observed)",
+        "is_bank_holiday_ew_recomputed": 1,
+        "is_holiday_in_combined_file": 0,
+        "listed_by_govuk": null,
+        "settlement_date": "2010-12-27",
+        "weekday": "Monday"
+      },
+      {
+        "finding": "flagged_in_combined_file_but_falls_on_weekend",
+        "govuk_snapshot_covers_date": false,
+        "holiday_name": "",
+        "is_bank_holiday_ew_recomputed": 0,
+        "is_holiday_in_combined_file": 1,
+        "listed_by_govuk": null,
+        "settlement_date": "2011-12-25",
+        "weekday": "Sunday"
+      },
+      {
+        "finding": "missing_in_combined_file",
+        "govuk_snapshot_covers_date": false,
+        "holiday_name": "Boxing Day",
+        "is_bank_holiday_ew_recomputed": 1,
+        "is_holiday_in_combined_file": 0,
+        "listed_by_govuk": null,
+        "settlement_date": "2011-12-26",
+        "weekday": "Monday"
+      },
+      {
+        "finding": "flagged_in_combined_file_but_falls_on_weekend",
+        "govuk_snapshot_covers_date": false,
+        "holiday_name": "",
+        "is_bank_holiday_ew_recomputed": 0,
+        "is_holiday_in_combined_file": 1,
+        "listed_by_govuk": null,
+        "settlement_date": "2016-12-25",
+        "weekday": "Sunday"
+      },
+      {
+        "finding": "missing_in_combined_file",
+        "govuk_snapshot_covers_date": false,
+        "holiday_name": "Boxing Day",
+        "is_bank_holiday_ew_recomputed": 1,
+        "is_holiday_in_combined_file": 0,
+        "listed_by_govuk": null,
+        "settlement_date": "2016-12-26",
+        "weekday": "Monday"
+      },
+      {
+        "finding": "flagged_in_combined_file_but_falls_on_weekend",
+        "govuk_snapshot_covers_date": true,
+        "holiday_name": "",
+        "is_bank_holiday_ew_recomputed": 0,
+        "is_holiday_in_combined_file": 1,
+        "listed_by_govuk": false,
+        "settlement_date": "2021-12-25",
+        "weekday": "Saturday"
+      },
+      {
+        "finding": "missing_in_combined_file",
+        "govuk_snapshot_covers_date": true,
+        "holiday_name": "Christmas Day (observed)",
+        "is_bank_holiday_ew_recomputed": 1,
+        "is_holiday_in_combined_file": 0,
+        "listed_by_govuk": true,
+        "settlement_date": "2021-12-27",
+        "weekday": "Monday"
+      },
+      {
+        "finding": "flagged_in_combined_file_but_falls_on_weekend",
+        "govuk_snapshot_covers_date": true,
+        "holiday_name": "",
+        "is_bank_holiday_ew_recomputed": 0,
+        "is_holiday_in_combined_file": 1,
+        "listed_by_govuk": false,
+        "settlement_date": "2022-12-25",
+        "weekday": "Sunday"
+      },
+      {
+        "finding": "missing_in_combined_file",
+        "govuk_snapshot_covers_date": true,
+        "holiday_name": "Boxing Day",
+        "is_bank_holiday_ew_recomputed": 1,
+        "is_holiday_in_combined_file": 0,
+        "listed_by_govuk": true,
+        "settlement_date": "2022-12-26",
+        "weekday": "Monday"
+      }
+    ],
+    "govuk_cross_check": {
+      "combined_file_vs_govuk_only_in_file": [
+        "2021-12-25",
+        "2022-12-25"
+      ],
+      "combined_file_vs_govuk_only_in_govuk": [
+        "2021-12-27",
+        "2022-12-26"
+      ],
+      "govuk_days": 49,
+      "note": "gov.uk's JSON no longer carries years before 2019; 2009-2018 rely on the holidays package.",
+      "only_in_govuk": [],
+      "only_in_recomputed": [],
+      "range": "2019-01-01..2024-12-05",
+      "recomputed_days": 49,
+      "retrieved": "2026-10-24",
+      "sha256": "538b3482c28b85ecd2db606a0d5ae6ad17248900b6498700ce0a48d26a3ecde6",
+      "snapshot": "backend/app/data/reference/bank_holidays_gov_uk.json",
+      "source_url": "https://www.gov.uk/bank-holidays.json"
+    },
+    "nominal_weekend_dates": [
+      {
+        "date": "2009-12-26",
+        "flagged_in_combined_file": false,
+        "weekday": "Saturday"
+      },
+      {
+        "date": "2010-12-25",
+        "flagged_in_combined_file": true,
+        "weekday": "Saturday"
+      },
+      {
+        "date": "2010-12-26",
+        "flagged_in_combined_file": false,
+        "weekday": "Sunday"
+      },
+      {
+        "date": "2011-01-01",
+        "flagged_in_combined_file": false,
+        "weekday": "Saturday"
+      },
+      {
+        "date": "2011-12-25",
+        "flagged_in_combined_file": true,
+        "weekday": "Sunday"
+      },
+      {
+        "date": "2012-01-01",
+        "flagged_in_combined_file": false,
+        "weekday": "Sunday"
+      },
+      {
+        "date": "2015-12-26",
+        "flagged_in_combined_file": false,
+        "weekday": "Saturday"
+      },
+      {
+        "date": "2016-12-25",
+        "flagged_in_combined_file": true,
+        "weekday": "Sunday"
+      },
+      {
+        "date": "2017-01-01",
+        "flagged_in_combined_file": false,
+        "weekday": "Sunday"
+      },
+      {
+        "date": "2020-12-26",
+        "flagged_in_combined_file": false,
+        "weekday": "Saturday"
+      },
+      {
+        "date": "2021-12-25",
+        "flagged_in_combined_file": true,
+        "weekday": "Saturday"
+      },
+      {
+        "date": "2021-12-26",
+        "flagged_in_combined_file": false,
+        "weekday": "Sunday"
+      },
+      {
+        "date": "2022-01-01",
+        "flagged_in_combined_file": false,
+        "weekday": "Saturday"
+      },
+      {
+        "date": "2022-12-25",
+        "flagged_in_combined_file": true,
+        "weekday": "Sunday"
+      },
+      {
+        "date": "2023-01-01",
+        "flagged_in_combined_file": false,
+        "weekday": "Sunday"
+      }
+    ],
+    "package_candidates": [
+      {
+        "candidate": "England",
+        "nominal_days": 146,
+        "nominal_only_in_file": 0,
+        "nominal_only_in_package": 15,
+        "observed_days": 131,
+        "observed_only_in_file": 5,
+        "observed_only_in_package": 5
+      },
+      {
+        "candidate": "Wales",
+        "nominal_days": 146,
+        "nominal_only_in_file": 0,
+        "nominal_only_in_package": 15,
+        "observed_days": 131,
+        "observed_only_in_file": 5,
+        "observed_only_in_package": 5
+      },
+      {
+        "candidate": "Scotland",
+        "nominal_days": 171,
+        "nominal_only_in_file": 32,
+        "nominal_only_in_package": 72,
+        "observed_days": 147,
+        "observed_only_in_file": 37,
+        "observed_only_in_package": 53
+      },
+      {
+        "candidate": "Northern Ireland",
+        "nominal_days": 187,
+        "nominal_only_in_file": 0,
+        "nominal_only_in_package": 56,
+        "observed_days": 163,
+        "observed_only_in_file": 5,
+        "observed_only_in_package": 37
+      },
+      {
+        "candidate": "UK default (no subdivision)",
+        "nominal_days": 114,
+        "nominal_only_in_file": 32,
+        "nominal_only_in_package": 15,
+        "observed_days": 99,
+        "observed_only_in_file": 37,
+        "observed_only_in_package": 5
+      }
+    ],
+    "recomputed_holiday_days": 131
+  },
+  "nonan_file_critique": {
+    "columns_dropped": [
+      "scottish_transfer",
+      "nsl_flow",
+      "eleclink_flow",
+      "viking_flow",
+      "greenlink_flow"
+    ],
+    "dropped_rows_by_reason": {
+      "period_49_or_50_on_autumn_clock_change_day": 32,
+      "whole_day_deleted_because_tsd_equals_0": 720
+    },
+    "examples": {
+      "autumn_2024-10-27": {
+        "date": "2024-10-27",
+        "last_correct_local_start": "23:30:00+0000",
+        "last_stamp_in_noNaN_file": "23:30:00",
+        "period_5_correct_local_start": "01:00:00+0000",
+        "period_5_stamp_in_noNaN_file": "02:00:00",
+        "rows_in_noNaN_file": 48,
+        "rows_in_yearly_files": 50
+      },
+      "spring_2024-03-31": {
+        "date": "2024-03-31",
+        "last_correct_local_start": "23:30:00+0100",
+        "last_stamp_in_noNaN_file": "22:30:00",
+        "period_3_correct_local_start": "02:00:00+0100",
+        "period_3_stamp_in_noNaN_file": "01:00:00",
+        "rows_in_noNaN_file": 46,
+        "rows_in_yearly_files": 46
+      }
+    },
+    "extra_columns": [
+      "period_hour",
+      "is_holiday"
+    ],
+    "kept_rows_stamped_with_ambiguous_local_time": 32,
+    "kept_rows_stamped_with_nonexistent_local_time": 32,
+    "kept_rows_with_wrong_local_clock_time": 1408,
+    "rows_dropped": 752,
+    "rows_in_noNaN_file": 278512,
+    "rows_in_yearly_files": 279264,
+    "rows_on_tsd_zero_days_deleted": 720,
+    "rows_only_in_noNaN_file": 0,
+    "rows_with_valid_tsd_deleted_on_those_days": 241,
+    "settlement_date_column_holds_naive_timestamp": true,
+    "tsd_zero_days": 15,
+    "tsd_zero_rows": 479,
+    "value_mismatches_on_kept_rows_by_column": {
+      "britned_flow": 0,
+      "east_west_flow": 0,
+      "embedded_solar_capacity": 0,
+      "embedded_solar_generation": 0,
+      "embedded_wind_capacity": 0,
+      "embedded_wind_generation": 0,
+      "england_wales_demand": 0,
+      "ifa2_flow": 0,
+      "ifa_flow": 0,
+      "moyle_flow": 0,
+      "nd": 0,
+      "nemo_flow": 0,
+      "non_bm_stor": 0,
+      "pump_storage_pumping": 0,
+      "tsd": 0
+    },
+    "verdict": "REJECTED as a source: deletes whole days to remove one bad column and mislabels time across clock changes."
+  }
+}

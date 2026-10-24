@@ -1,0 +1,4 @@
+# Hash-verified data must never be touched by line-ending conversion.
+data/raw/** -text
+data/processed/** -text
+backend/app/data/reference/** -text

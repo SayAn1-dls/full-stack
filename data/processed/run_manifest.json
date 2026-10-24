@@ -1,0 +1,1180 @@
+{
+  "column_profile": {
+    "britned_flow": {
+      "first_nonzero_utc": "2011-01-27T10:00:00Z",
+      "first_published_utc": "2009-01-01T00:00:00Z",
+      "max": 1143,
+      "min": -1215,
+      "null_rows": 0,
+      "published_rows": 279264,
+      "zero_rows": 53856
+    },
+    "east_west_flow": {
+      "first_nonzero_utc": "2012-07-26T13:00:00Z",
+      "first_published_utc": "2009-01-01T00:00:00Z",
+      "max": 504,
+      "min": -585,
+      "null_rows": 0,
+      "published_rows": 279264,
+      "zero_rows": 109686
+    },
+    "eleclink_flow": {
+      "first_nonzero_utc": "2021-09-17T23:00:00Z",
+      "first_published_utc": "2019-01-01T00:00:00Z",
+      "max": 1002,
+      "min": -1028,
+      "null_rows": 175296,
+      "published_rows": 103968,
+      "zero_rows": 63758
+    },
+    "embedded_solar_capacity": {
+      "first_nonzero_utc": "2010-03-31T23:00:00Z",
+      "first_published_utc": "2009-01-01T00:00:00Z",
+      "max": 17197,
+      "min": 0,
+      "null_rows": 0,
+      "published_rows": 279264,
+      "zero_rows": 21838
+    },
+    "embedded_solar_generation": {
+      "first_nonzero_utc": "2010-04-01T09:30:00Z",
+      "first_published_utc": "2009-01-01T00:00:00Z",
+      "max": 11224,
+      "min": 0,
+      "null_rows": 0,
+      "published_rows": 279264,
+      "zero_rows": 142301
+    },
+    "embedded_wind_capacity": {
+      "first_nonzero_utc": "2009-01-01T00:00:00Z",
+      "first_published_utc": "2009-01-01T00:00:00Z",
+      "max": 6622,
+      "min": 1403,
+      "null_rows": 0,
+      "published_rows": 279264,
+      "zero_rows": 0
+    },
+    "embedded_wind_generation": {
+      "first_nonzero_utc": "2009-01-01T00:00:00Z",
+      "first_published_utc": "2009-01-01T00:00:00Z",
+      "max": 5930,
+      "min": 0,
+      "null_rows": 0,
+      "published_rows": 279264,
+      "zero_rows": 61
+    },
+    "england_wales_demand": {
+      "first_nonzero_utc": "2009-01-01T00:00:00Z",
+      "first_published_utc": "2009-01-01T00:00:00Z",
+      "max": 53325,
+      "min": 7654,
+      "null_rows": 21,
+      "published_rows": 279243,
+      "zero_rows": 0
+    },
+    "greenlink_flow": {
+      "first_nonzero_utc": null,
+      "first_published_utc": "2024-01-01T00:00:00Z",
+      "max": 0,
+      "min": 0,
+      "null_rows": 262944,
+      "published_rows": 16320,
+      "zero_rows": 16320
+    },
+    "ifa2_flow": {
+      "first_nonzero_utc": "2020-11-18T16:30:00Z",
+      "first_published_utc": "2009-01-01T00:00:00Z",
+      "max": 1016,
+      "min": -1030,
+      "null_rows": 0,
+      "published_rows": 279264,
+      "zero_rows": 208340
+    },
+    "ifa_flow": {
+      "first_nonzero_utc": "2009-01-01T00:00:00Z",
+      "first_published_utc": "2009-01-01T00:00:00Z",
+      "max": 2066,
+      "min": -2056,
+      "null_rows": 0,
+      "published_rows": 279264,
+      "zero_rows": 3521
+    },
+    "moyle_flow": {
+      "first_nonzero_utc": "2009-01-01T00:00:00Z",
+      "first_published_utc": "2009-01-01T00:00:00Z",
+      "max": 499,
+      "min": -505,
+      "null_rows": 0,
+      "published_rows": 279264,
+      "zero_rows": 22133
+    },
+    "nd": {
+      "first_nonzero_utc": "2009-01-01T00:00:00Z",
+      "first_published_utc": "2009-01-01T00:00:00Z",
+      "max": 59095,
+      "min": 13367,
+      "null_rows": 0,
+      "published_rows": 279264,
+      "zero_rows": 0
+    },
+    "nemo_flow": {
+      "first_nonzero_utc": "2019-02-01T00:00:00Z",
+      "first_published_utc": "2009-01-01T00:00:00Z",
+      "max": 1033,
+      "min": -1023,
+      "null_rows": 0,
+      "published_rows": 279264,
+      "zero_rows": 180325
+    },
+    "non_bm_stor": {
+      "first_nonzero_utc": "2009-01-02T10:30:00Z",
+      "first_published_utc": "2009-01-01T00:00:00Z",
+      "max": 893,
+      "min": -24,
+      "null_rows": 0,
+      "published_rows": 279264,
+      "zero_rows": 265128
+    },
+    "nsl_flow": {
+      "first_nonzero_utc": "2021-06-14T09:30:00Z",
+      "first_published_utc": "2019-01-01T00:00:00Z",
+      "max": 1401,
+      "min": -1455,
+      "null_rows": 175296,
+      "published_rows": 103968,
+      "zero_rows": 44256
+    },
+    "pump_storage_pumping": {
+      "first_nonzero_utc": "2009-01-01T00:00:00Z",
+      "first_published_utc": "2009-01-01T00:00:00Z",
+      "max": 2019,
+      "min": 0,
+      "null_rows": 0,
+      "published_rows": 279264,
+      "zero_rows": 966
+    },
+    "scottish_transfer": {
+      "first_nonzero_utc": "2023-01-01T00:00:00Z",
+      "first_published_utc": "2023-01-01T00:00:00Z",
+      "max": 6585,
+      "min": -2851,
+      "null_rows": 245424,
+      "published_rows": 33840,
+      "zero_rows": 7
+    },
+    "tsd": {
+      "first_nonzero_utc": "2009-01-01T00:00:00Z",
+      "first_published_utc": "2009-01-01T00:00:00Z",
+      "max": 60147,
+      "min": 16513,
+      "null_rows": 479,
+      "published_rows": 278785,
+      "zero_rows": 0
+    },
+    "viking_flow": {
+      "first_nonzero_utc": "2023-11-28T07:30:00Z",
+      "first_published_utc": "2023-01-01T00:00:00Z",
+      "max": 1436,
+      "min": -1465,
+      "null_rows": 245424,
+      "published_rows": 33840,
+      "zero_rows": 18911
+    }
+  },
+  "constant_columns": {
+    "greenlink_flow": {
+      "published_rows": 16320,
+      "value": 0
+    }
+  },
+  "coverage": {
+    "first_period_start_utc": "2009-01-01T00:00:00Z",
+    "first_settlement_date": "2009-01-01",
+    "last_period_start_utc": "2024-12-05T23:30:00Z",
+    "last_settlement_date": "2024-12-05",
+    "note": "Dates after last_settlement_date are out of coverage (not missing)."
+  },
+  "days": {
+    "by_length_periods": {
+      "46": 16,
+      "48": 5786,
+      "50": 16
+    },
+    "complete": 5818,
+    "total": 5818
+  },
+  "hash_check": {
+    "all_match": true,
+    "enabled": true,
+    "mismatches_allowed": false
+  },
+  "inputs": {
+    "historic_demand_year_2009.csv": {
+      "date_formats": [
+        "DD-MON-YYYY"
+      ],
+      "expected_sha256": "a9db20decb5e4f64f3476ca30e61410e684e8643c41180197dd70dfbce93ed84",
+      "hash_ok": true,
+      "header_style": "UPPERCASE",
+      "line_endings": "CRLF",
+      "published_columns": [
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow"
+      ],
+      "raw_column_order": [
+        "settlement_date",
+        "settlement_period",
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow"
+      ],
+      "rows": 17520,
+      "sha256": "a9db20decb5e4f64f3476ca30e61410e684e8643c41180197dd70dfbce93ed84",
+      "size_bytes": 1221064,
+      "unpublished_columns": [
+        "scottish_transfer",
+        "nsl_flow",
+        "eleclink_flow",
+        "viking_flow",
+        "greenlink_flow"
+      ]
+    },
+    "historic_demand_year_2010.csv": {
+      "date_formats": [
+        "DD-MON-YYYY"
+      ],
+      "expected_sha256": "acff58f64806972a955b8db18f8f9cb8fb5818a6d1522f53ae84d0b5bbe2d675",
+      "hash_ok": true,
+      "header_style": "UPPERCASE",
+      "line_endings": "CRLF",
+      "published_columns": [
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow"
+      ],
+      "raw_column_order": [
+        "settlement_date",
+        "settlement_period",
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow"
+      ],
+      "rows": 17520,
+      "sha256": "acff58f64806972a955b8db18f8f9cb8fb5818a6d1522f53ae84d0b5bbe2d675",
+      "size_bytes": 1237038,
+      "unpublished_columns": [
+        "scottish_transfer",
+        "nsl_flow",
+        "eleclink_flow",
+        "viking_flow",
+        "greenlink_flow"
+      ]
+    },
+    "historic_demand_year_2011.csv": {
+      "date_formats": [
+        "DD-MON-YYYY"
+      ],
+      "expected_sha256": "102be4a6a8db596141bc3af62605c016fc05209ab1376d5be821375933db12de",
+      "hash_ok": true,
+      "header_style": "UPPERCASE",
+      "line_endings": "CRLF",
+      "published_columns": [
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow"
+      ],
+      "raw_column_order": [
+        "settlement_date",
+        "settlement_period",
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow"
+      ],
+      "rows": 17520,
+      "sha256": "102be4a6a8db596141bc3af62605c016fc05209ab1376d5be821375933db12de",
+      "size_bytes": 1269447,
+      "unpublished_columns": [
+        "scottish_transfer",
+        "nsl_flow",
+        "eleclink_flow",
+        "viking_flow",
+        "greenlink_flow"
+      ]
+    },
+    "historic_demand_year_2012.csv": {
+      "date_formats": [
+        "DD-MON-YYYY"
+      ],
+      "expected_sha256": "551a7a749483b011f7019f524f215f722c3329c136afd02b93888eeaf1bc3e4d",
+      "hash_ok": true,
+      "header_style": "UPPERCASE",
+      "line_endings": "CRLF",
+      "published_columns": [
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow"
+      ],
+      "raw_column_order": [
+        "settlement_date",
+        "settlement_period",
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow"
+      ],
+      "rows": 17568,
+      "sha256": "551a7a749483b011f7019f524f215f722c3329c136afd02b93888eeaf1bc3e4d",
+      "size_bytes": 1323744,
+      "unpublished_columns": [
+        "scottish_transfer",
+        "nsl_flow",
+        "eleclink_flow",
+        "viking_flow",
+        "greenlink_flow"
+      ]
+    },
+    "historic_demand_year_2013.csv": {
+      "date_formats": [
+        "DD-MON-YYYY"
+      ],
+      "expected_sha256": "f9ed1ed7d56d72bd48f633d8b50ca8a1ced981f76e9fa3c3958bb70517303cdb",
+      "hash_ok": true,
+      "header_style": "UPPERCASE",
+      "line_endings": "CRLF",
+      "published_columns": [
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow"
+      ],
+      "raw_column_order": [
+        "settlement_date",
+        "settlement_period",
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow"
+      ],
+      "rows": 17520,
+      "sha256": "f9ed1ed7d56d72bd48f633d8b50ca8a1ced981f76e9fa3c3958bb70517303cdb",
+      "size_bytes": 1372112,
+      "unpublished_columns": [
+        "scottish_transfer",
+        "nsl_flow",
+        "eleclink_flow",
+        "viking_flow",
+        "greenlink_flow"
+      ]
+    },
+    "historic_demand_year_2014.csv": {
+      "date_formats": [
+        "DD-MON-YYYY"
+      ],
+      "expected_sha256": "58fec6fe4cb12866032cc4b128de7d1999c4382796c51289a33a1170d3d934ba",
+      "hash_ok": true,
+      "header_style": "UPPERCASE",
+      "line_endings": "CRLF",
+      "published_columns": [
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow"
+      ],
+      "raw_column_order": [
+        "settlement_date",
+        "settlement_period",
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow"
+      ],
+      "rows": 17520,
+      "sha256": "58fec6fe4cb12866032cc4b128de7d1999c4382796c51289a33a1170d3d934ba",
+      "size_bytes": 1379848,
+      "unpublished_columns": [
+        "scottish_transfer",
+        "nsl_flow",
+        "eleclink_flow",
+        "viking_flow",
+        "greenlink_flow"
+      ]
+    },
+    "historic_demand_year_2015.csv": {
+      "date_formats": [
+        "DD-MON-YYYY"
+      ],
+      "expected_sha256": "da73a3a41b06f9005654cd4230ef9d906f68478463b1caa1773bdf53c97817be",
+      "hash_ok": true,
+      "header_style": "UPPERCASE",
+      "line_endings": "CRLF",
+      "published_columns": [
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow"
+      ],
+      "raw_column_order": [
+        "settlement_date",
+        "settlement_period",
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow"
+      ],
+      "rows": 17520,
+      "sha256": "da73a3a41b06f9005654cd4230ef9d906f68478463b1caa1773bdf53c97817be",
+      "size_bytes": 1380366,
+      "unpublished_columns": [
+        "scottish_transfer",
+        "nsl_flow",
+        "eleclink_flow",
+        "viking_flow",
+        "greenlink_flow"
+      ]
+    },
+    "historic_demand_year_2016.csv": {
+      "date_formats": [
+        "DD-MON-YYYY"
+      ],
+      "expected_sha256": "ec031cca6e7a819de73abd48dc8283dcb2949fabeaa1c06e840b6cea3e8bf3dc",
+      "hash_ok": true,
+      "header_style": "UPPERCASE",
+      "line_endings": "CRLF",
+      "published_columns": [
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow"
+      ],
+      "raw_column_order": [
+        "settlement_date",
+        "settlement_period",
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow"
+      ],
+      "rows": 17568,
+      "sha256": "ec031cca6e7a819de73abd48dc8283dcb2949fabeaa1c06e840b6cea3e8bf3dc",
+      "size_bytes": 1367182,
+      "unpublished_columns": [
+        "scottish_transfer",
+        "nsl_flow",
+        "eleclink_flow",
+        "viking_flow",
+        "greenlink_flow"
+      ]
+    },
+    "historic_demand_year_2017.csv": {
+      "date_formats": [
+        "DD-MON-YYYY"
+      ],
+      "expected_sha256": "ad6c47de0264aa1183336c7ca438631f90056c41f438c86f34da147a51351de4",
+      "hash_ok": true,
+      "header_style": "UPPERCASE",
+      "line_endings": "CRLF",
+      "published_columns": [
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow"
+      ],
+      "raw_column_order": [
+        "settlement_date",
+        "settlement_period",
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow"
+      ],
+      "rows": 17520,
+      "sha256": "ad6c47de0264aa1183336c7ca438631f90056c41f438c86f34da147a51351de4",
+      "size_bytes": 1385795,
+      "unpublished_columns": [
+        "scottish_transfer",
+        "nsl_flow",
+        "eleclink_flow",
+        "viking_flow",
+        "greenlink_flow"
+      ]
+    },
+    "historic_demand_year_2018.csv": {
+      "date_formats": [
+        "DD-MON-YYYY"
+      ],
+      "expected_sha256": "a2e19b4eb4157a190d1e7f2c946ee92c4be2ae196f72d55545c870399d3efb2f",
+      "hash_ok": true,
+      "header_style": "UPPERCASE",
+      "line_endings": "CRLF",
+      "published_columns": [
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow"
+      ],
+      "raw_column_order": [
+        "settlement_date",
+        "settlement_period",
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow"
+      ],
+      "rows": 17520,
+      "sha256": "a2e19b4eb4157a190d1e7f2c946ee92c4be2ae196f72d55545c870399d3efb2f",
+      "size_bytes": 1389142,
+      "unpublished_columns": [
+        "scottish_transfer",
+        "nsl_flow",
+        "eleclink_flow",
+        "viking_flow",
+        "greenlink_flow"
+      ]
+    },
+    "historic_demand_year_2019.csv": {
+      "date_formats": [
+        "DD-MON-YYYY"
+      ],
+      "expected_sha256": "8bd3ea1d6dd1a8cc42179cc44717b2ce4714edb04da97f9e1adc155f8016cd59",
+      "hash_ok": true,
+      "header_style": "UPPERCASE",
+      "line_endings": "CRLF",
+      "published_columns": [
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow",
+        "nsl_flow",
+        "eleclink_flow"
+      ],
+      "raw_column_order": [
+        "settlement_date",
+        "settlement_period",
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow",
+        "nsl_flow",
+        "eleclink_flow"
+      ],
+      "rows": 17520,
+      "sha256": "8bd3ea1d6dd1a8cc42179cc44717b2ce4714edb04da97f9e1adc155f8016cd59",
+      "size_bytes": 1484746,
+      "unpublished_columns": [
+        "scottish_transfer",
+        "viking_flow",
+        "greenlink_flow"
+      ]
+    },
+    "historic_demand_year_2020.csv": {
+      "date_formats": [
+        "DD-MON-YYYY"
+      ],
+      "expected_sha256": "6c35dd5d83085d34a51b3908f60a287a71a7e2ea558ef720f06033e6bcd63d60",
+      "hash_ok": true,
+      "header_style": "UPPERCASE",
+      "line_endings": "CRLF",
+      "published_columns": [
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow",
+        "nsl_flow",
+        "eleclink_flow"
+      ],
+      "raw_column_order": [
+        "settlement_date",
+        "settlement_period",
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow",
+        "nsl_flow",
+        "eleclink_flow"
+      ],
+      "rows": 17568,
+      "sha256": "6c35dd5d83085d34a51b3908f60a287a71a7e2ea558ef720f06033e6bcd63d60",
+      "size_bytes": 1489750,
+      "unpublished_columns": [
+        "scottish_transfer",
+        "viking_flow",
+        "greenlink_flow"
+      ]
+    },
+    "historic_demand_year_2021.csv": {
+      "date_formats": [
+        "DD-MON-YYYY"
+      ],
+      "expected_sha256": "0d1b5fd0b70d699cd1a98b4629da2ce72e7dab18078262c25c44d565aa252e26",
+      "hash_ok": true,
+      "header_style": "UPPERCASE",
+      "line_endings": "CRLF",
+      "published_columns": [
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow",
+        "nsl_flow",
+        "eleclink_flow"
+      ],
+      "raw_column_order": [
+        "settlement_date",
+        "settlement_period",
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow",
+        "nsl_flow",
+        "eleclink_flow"
+      ],
+      "rows": 17520,
+      "sha256": "0d1b5fd0b70d699cd1a98b4629da2ce72e7dab18078262c25c44d565aa252e26",
+      "size_bytes": 1518909,
+      "unpublished_columns": [
+        "scottish_transfer",
+        "viking_flow",
+        "greenlink_flow"
+      ]
+    },
+    "historic_demand_year_2022.csv": {
+      "date_formats": [
+        "YYYY-MM-DD"
+      ],
+      "expected_sha256": "957c7e81d46ce2c88472e3b7d3c98109c282d6065ec4f8d987b57c7284205746",
+      "hash_ok": true,
+      "header_style": "lowercase",
+      "line_endings": "LF",
+      "published_columns": [
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow",
+        "nsl_flow",
+        "eleclink_flow"
+      ],
+      "raw_column_order": [
+        "settlement_date",
+        "settlement_period",
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow",
+        "nsl_flow",
+        "eleclink_flow"
+      ],
+      "rows": 17520,
+      "sha256": "957c7e81d46ce2c88472e3b7d3c98109c282d6065ec4f8d987b57c7284205746",
+      "size_bytes": 1576774,
+      "unpublished_columns": [
+        "scottish_transfer",
+        "viking_flow",
+        "greenlink_flow"
+      ]
+    },
+    "historic_demand_year_2023.csv": {
+      "date_formats": [
+        "YYYY-MM-DD"
+      ],
+      "expected_sha256": "dadf0e4e5856b06c913704a6c463894d1b666df26124e0bb85e991a225909c2d",
+      "hash_ok": true,
+      "header_style": "lowercase",
+      "line_endings": "LF",
+      "published_columns": [
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "scottish_transfer",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow",
+        "nsl_flow",
+        "eleclink_flow",
+        "viking_flow"
+      ],
+      "raw_column_order": [
+        "settlement_date",
+        "settlement_period",
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "scottish_transfer",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow",
+        "nsl_flow",
+        "eleclink_flow",
+        "viking_flow"
+      ],
+      "rows": 17520,
+      "sha256": "dadf0e4e5856b06c913704a6c463894d1b666df26124e0bb85e991a225909c2d",
+      "size_bytes": 1701263,
+      "unpublished_columns": [
+        "greenlink_flow"
+      ]
+    },
+    "historic_demand_year_2024.csv": {
+      "date_formats": [
+        "YYYY-MM-DD"
+      ],
+      "expected_sha256": "32050aafbdf5f3e2c53082ae62f36137a6a758b1d3c78a6775a42678c0b0528c",
+      "hash_ok": true,
+      "header_style": "lowercase",
+      "line_endings": "LF",
+      "published_columns": [
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "scottish_transfer",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow",
+        "nsl_flow",
+        "eleclink_flow",
+        "viking_flow",
+        "greenlink_flow"
+      ],
+      "raw_column_order": [
+        "settlement_date",
+        "settlement_period",
+        "nd",
+        "tsd",
+        "england_wales_demand",
+        "embedded_wind_generation",
+        "embedded_wind_capacity",
+        "embedded_solar_generation",
+        "embedded_solar_capacity",
+        "non_bm_stor",
+        "pump_storage_pumping",
+        "scottish_transfer",
+        "ifa_flow",
+        "ifa2_flow",
+        "britned_flow",
+        "moyle_flow",
+        "east_west_flow",
+        "nemo_flow",
+        "nsl_flow",
+        "eleclink_flow",
+        "viking_flow",
+        "greenlink_flow"
+      ],
+      "rows": 16320,
+      "sha256": "32050aafbdf5f3e2c53082ae62f36137a6a758b1d3c78a6775a42678c0b0528c",
+      "size_bytes": 1651870,
+      "unpublished_columns": []
+    }
+  },
+  "is_bank_holiday_ew_rows": 6288,
+  "nulled_cells": {
+    "england_wales_demand": {
+      "invalid_zero_reading": 21
+    },
+    "nd": {
+      "invalid_zero_reading": 0
+    },
+    "tsd": {
+      "invalid_zero_reading": 479
+    }
+  },
+  "outputs": {
+    "demand_clean.csv": {
+      "bytes": 66945229,
+      "sha256": "29232b749981ee07eab757e98ec5f9b0cabd70a85745cbc8c9dff607b88d4b0b"
+    },
+    "demand_clean.parquet": {
+      "bytes": 11330724,
+      "sha256": "d198542292d69e7383b6d42e21086e3e4268e8b31a86c8ed100d05fbadfe75be"
+    },
+    "demand_daily_completeness.csv": {
+      "bytes": 216157,
+      "sha256": "851b3d213e09dbfa718f352e37b394db02001c7ee6099052ec5cf596cb9c1cdc"
+    },
+    "demand_null_reasons.csv": {
+      "bytes": 8533,
+      "sha256": "0ce1b0de9e493679635357a15ff28e129fb969e2a16eda0ea1b2fae087100edd"
+    }
+  },
+  "pipeline_version": "1.0.0",
+  "reference_checks": {
+    "combined_file_mismatching_cells": 0,
+    "is_holiday_disagreeing_days": 10,
+    "nonan_rows_dropped": 752,
+    "report_file": "reference_checks.json",
+    "report_sha256": "865d914ccf16734f49984d11644b2b1f1ef4f33823b4989dd9e2e4066ee5a218",
+    "status": "ran"
+  },
+  "rows_dropped": 0,
+  "rows_flagged": {
+    "any_flag": 17162,
+    "flag_constant_column": 16320,
+    "flag_england_wales_demand_zero": 21,
+    "flag_nd_zero": 0,
+    "flag_negative_stor": 13,
+    "flag_tsd_below_nd": 22,
+    "flag_tsd_zero": 479,
+    "flag_wind_gen_above_capacity": 308
+  },
+  "rows_in": 279264,
+  "rows_out": 279264,
+  "run": {
+    "duration_seconds": 24.09,
+    "holidays": "0.107",
+    "pandas": "3.0.5",
+    "pyarrow": "26.0.0",
+    "python": "3.13.17",
+    "started_utc": "2026-10-24T15:49:36Z"
+  },
+  "time_axis": {
+    "step_minutes_max": 30.0,
+    "step_minutes_min": 30.0,
+    "strictly_increasing": true,
+    "unique": true
+  },
+  "tsd_below_nd": {
+    "after_invalid_nulling": 22,
+    "note": "raw_rows includes every tsd == 0 row (nulled as invalid); only the remainder is flagged",
+    "raw_rows": 501
+  }
+}

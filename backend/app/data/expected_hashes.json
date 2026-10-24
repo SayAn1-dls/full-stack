@@ -1,0 +1,20 @@
+{
+  "historic_demand_year_2009.csv": {"rows": 17520, "cols": 17, "sha256": "a9db20decb5e4f64f3476ca30e61410e684e8643c41180197dd70dfbce93ed84"},
+  "historic_demand_year_2010.csv": {"rows": 17520, "cols": 17, "sha256": "acff58f64806972a955b8db18f8f9cb8fb5818a6d1522f53ae84d0b5bbe2d675"},
+  "historic_demand_year_2011.csv": {"rows": 17520, "cols": 17, "sha256": "102be4a6a8db596141bc3af62605c016fc05209ab1376d5be821375933db12de"},
+  "historic_demand_year_2012.csv": {"rows": 17568, "cols": 17, "sha256": "551a7a749483b011f7019f524f215f722c3329c136afd02b93888eeaf1bc3e4d"},
+  "historic_demand_year_2013.csv": {"rows": 17520, "cols": 17, "sha256": "f9ed1ed7d56d72bd48f633d8b50ca8a1ced981f76e9fa3c3958bb70517303cdb"},
+  "historic_demand_year_2014.csv": {"rows": 17520, "cols": 17, "sha256": "58fec6fe4cb12866032cc4b128de7d1999c4382796c51289a33a1170d3d934ba"},
+  "historic_demand_year_2015.csv": {"rows": 17520, "cols": 17, "sha256": "da73a3a41b06f9005654cd4230ef9d906f68478463b1caa1773bdf53c97817be"},
+  "historic_demand_year_2016.csv": {"rows": 17568, "cols": 17, "sha256": "ec031cca6e7a819de73abd48dc8283dcb2949fabeaa1c06e840b6cea3e8bf3dc"},
+  "historic_demand_year_2017.csv": {"rows": 17520, "cols": 17, "sha256": "ad6c47de0264aa1183336c7ca438631f90056c41f438c86f34da147a51351de4"},
+  "historic_demand_year_2018.csv": {"rows": 17520, "cols": 17, "sha256": "a2e19b4eb4157a190d1e7f2c946ee92c4be2ae196f72d55545c870399d3efb2f"},
+  "historic_demand_year_2019.csv": {"rows": 17520, "cols": 19, "sha256": "8bd3ea1d6dd1a8cc42179cc44717b2ce4714edb04da97f9e1adc155f8016cd59"},
+  "historic_demand_year_2020.csv": {"rows": 17568, "cols": 19, "sha256": "6c35dd5d83085d34a51b3908f60a287a71a7e2ea558ef720f06033e6bcd63d60"},
+  "historic_demand_year_2021.csv": {"rows": 17520, "cols": 19, "sha256": "0d1b5fd0b70d699cd1a98b4629da2ce72e7dab18078262c25c44d565aa252e26"},
+  "historic_demand_year_2022.csv": {"rows": 17520, "cols": 19, "sha256": "957c7e81d46ce2c88472e3b7d3c98109c282d6065ec4f8d987b57c7284205746"},
+  "historic_demand_year_2023.csv": {"rows": 17520, "cols": 21, "sha256": "dadf0e4e5856b06c913704a6c463894d1b666df26124e0bb85e991a225909c2d"},
+  "historic_demand_year_2024.csv": {"rows": 16320, "cols": 22, "sha256": "32050aafbdf5f3e2c53082ae62f36137a6a758b1d3c78a6775a42678c0b0528c"},
+  "historic_demand_2009_2024.csv": {"rows": 279264, "cols": 24, "sha256": "d278d761413366aafecbe94928748169c6469093a36ca7d9508c6f93be8da4b9"},
+  "historic_demand_2009_2024_noNaN.csv": {"rows": 278512, "cols": 19, "sha256": "00aae1c8000b37652931a1d839e980b044bbcaa8c04f3b4e5b8fe85f574bd63b"}
+}

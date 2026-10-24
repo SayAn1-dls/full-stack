@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+# regenerable pipeline staging area
+data/interim/*
+!data/interim/.gitkeep
