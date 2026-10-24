@@ -38,6 +38,15 @@ failure was diagnosed and the wrong side was fixed.
 | BUG-020 | process | `create_git_project` was refused (`repo_no_access`) | The connected Vercel account cannot reach this GitHub repository | Empty project plus a deployment from the public Git source; the project is therefore not Git-linked and does not auto-deploy (DECISIONS D-34) |
 | BUG-021 | my own tooling | `pkill -f "uvicorn ..."` terminated my own shell (exit 144) whenever the same command line contained the pattern | The pattern matched the shell running the command | Kill by PID, in a separate command |
 
+### Demo video (found while making it)
+
+| ID | Where | What happened | Cause | Fix and regression guard |
+|---|---|---|---|---|
+| BUG-022 | video process | First cut spoke at about 180 words per minute, too fast for beginner-level English | Kokoro at speed 0.92 | Speed 0.87 (160-170 wpm) and a few sentences trimmed so Part 2 stays under 5:00 (4:46) |
+| BUG-023 | video process | A speech-recognition pass heard "FastAPI" as "fast to pi" and "Elexon" as "Alexa" | The voice engine read the spelled-out "Fast A P I" with a schwa, and stressed the second syllable of "Elexon" | "FastAPI" as one word; the phonemes for "Elexon" are overridden; re-checked |
+| BUG-024 | video process | The cut showed an empty white page (or the docs page's loading spinner) for about a second when switching from a slide to a live page | Page-load time through the sandbox proxy; pre-loading the pages in a second tab did not remove it | `assemble.py` holds the previous frame wherever the browser shows an empty white page; checked on the final cut |
+| BUG-025 | video process | The first caption cue came out as `00:00:00,1000`, invalid SRT | Milliseconds were rounded separately from seconds | Time is rounded once; all 108 cues validated (format, order, no overlap) |
+
 Core cleaning logic (timestamps, zero-nulling, flags, structural NA, uniqueness, completeness) had no defect surfaced by the
 test suite. Mutation checks confirm the tests can fail: ignoring DST, dropping the `tsd` rule, filling unpublished columns with 0,
 an off-by-one threshold, and over-nulling on real data were each caught (see TEST_REPORT.md).

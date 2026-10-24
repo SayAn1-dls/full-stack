@@ -107,6 +107,7 @@ frontend/
 data/
   elexon/wind_snapshot.json   the Elexon snapshot the app serves (1,536 half-hours of outturn, 280 forecast runs)
   raw/, processed/            NESO demand data (see below; not used by the app)
+demo/                      demo video: transcript, captions, YouTube description, build scripts (the MP4 is not in git)
 docs/
   APP_DESIGN.md            findings, decision logic, architecture, limits
   DATA_DICTIONARY.md, DATA_CLEANING_REPORT.md   NESO pipeline documentation
@@ -152,7 +153,7 @@ repository and were not done; neither was a Heroku deployment (Vercel was chosen
 
 This project was built with an AI coding assistant, Claude Code by Anthropic, which wrote the code, tests and documentation and ran the
 deployment. Outputs were checked by running the test suites, a browser-driven interaction suite (Playwright) against the local build, the Docker
-stack and the live site, and mutation checks on the analytics (`TEST_REPORT.md`). Docker was verified in a sandbox using local shim base images
+stack and the live site, and mutation checks on the analytics (`TEST_REPORT.md`). The demo video's script was written by the assistant and its narration voice is computer generated (`demo/README.md`). Docker was verified in a sandbox using local shim base images
 (`DECISIONS.md` D-35); the Dockerfiles themselves are unchanged and standard.
 
 ## Data licences and sources

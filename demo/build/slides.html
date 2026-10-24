@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wind Intelligence demo slides</title>
+<meta name="viewport" content="width=1280">
+<style>
+  :root { --bg:#fbfaf7; --card:#ffffff; --ink:#17191c; --muted:#59616a; --line:#e2dfd6; --blue:#2a78d6; --orange:#eb6834; --red:#e34948;
+          --navy:#0e1a2b; --navy2:#16263d; --amber:#b86e00; --green:#2f7d4f; }
+  * { box-sizing: border-box; }
+  html, body { margin:0; width:1280px; height:640px; overflow:hidden; background:var(--bg); color:var(--ink); font-family:Inter, system-ui, sans-serif; }
+  .slide { display:none; position:absolute; inset:0; padding:38px 56px; }
+  .slide.on { display:flex; flex-direction:column; justify-content:center; padding-bottom:70px; }
+  .slide.title.on { display:block; padding-bottom:38px; }
+  .dark { background:var(--navy); color:#f4f6f9; }
+  .eyebrow { font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .dark .eyebrow { color:#8fa6c4; }
+  h1 { font-size:68px; line-height:1.05; margin:14px 0 14px; letter-spacing:-.02em; }
+  h2 { font-size:36px; line-height:1.15; margin:6px 0 18px; letter-spacing:-.01em; }
+  p { margin:0; }
+  .lead { font-size:24px; line-height:1.4; color:var(--muted); max-width:900px; }
+  .dark .lead { color:#c3cfdf; }
+  #__cur { display:none !important; }
+  [data-s] { opacity:0; transform:translateY(10px); transition:opacity .55s ease, transform .55s ease; }
+  .shown { opacity:1 !important; transform:none !important; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px 24px; }
+  .row { display:flex; gap:20px; }
+  .col { flex:1; min-width:0; }
+  .big { font-size:64px; font-weight:700; letter-spacing:-.02em; line-height:1; }
+  .small { font-size:16px; color:var(--muted); line-height:1.4; }
+  .tag { display:inline-block; font-size:13px; font-weight:700; letter-spacing:.08em; padding:4px 10px; border-radius:999px; background:#eceae3; color:var(--muted); }
+  .blue { color:var(--blue); } .orange { color:var(--orange); } .red { color:var(--red); }
+  code, pre, .mono { font-family:"DejaVu Sans Mono", ui-monospace, monospace; }
+  .chip { display:inline-flex; align-items:center; gap:10px; background:var(--card); border:1px solid var(--line); border-radius:999px; padding:10px 18px; font-size:19px; font-weight:600; }
+  .dot { width:12px; height:12px; border-radius:50%; display:inline-block; }
+  .arrow { color:var(--muted); font-size:15px; text-align:center; }
+  ul.tight { margin:0; padding-left:22px; font-size:20px; line-height:1.55; }
+  .box { border:2px solid var(--ink); border-radius:12px; padding:14px 18px; background:var(--card); }
+  .box h3 { margin:0 0 4px; font-size:21px; } .box p { font-size:17px; color:var(--muted); line-height:1.4; }
+</style>
+</head>
+<body data-step="0">
+
+<!-- 1 · title, part 1 -->
+<section class="slide dark title" id="title1">
+  <div style="position:absolute;left:56px;top:150px;right:56px">
+    <div class="eyebrow">Pilot results · Part 1 of 2</div>
+    <h1>Wind Intelligence</h1>
+    <p class="lead">A day-ahead wind forecast check for the electricity buying team</p>
+    <p class="small" style="margin-top:26px;color:#8fa6c4;font-size:19px">Elexon FUELHH and WINDFOR data · decisions made in January 2026</p>
+  </div>
+  <svg viewBox="0 0 1280 150" style="position:absolute;left:0;bottom:0;width:1280px;height:150px" aria-hidden="true">
+    <path d="M0 70 C120 40 220 100 340 70 S560 20 700 60 S940 110 1060 70 S1220 40 1280 60" fill="none" stroke="#3987e5" stroke-width="3" opacity=".9"/>
+    <path d="M0 105 C140 90 230 130 350 108 S560 70 700 100 S940 135 1060 108 S1220 90 1280 100" fill="none" stroke="#e8703c" stroke-width="3" opacity=".9"/>
+  </svg>
+</section>
+
+<!-- 2 · the problem -->
+<section class="slide" id="problem">
+  <div class="eyebrow">The problem</div>
+  <h2>Buy tomorrow's power today, with a wind forecast</h2>
+  <div style="display:flex;align-items:center;gap:18px;margin-bottom:26px">
+    <span class="chip"><span class="dot" style="background:var(--blue)"></span>Today, 09:20: decide how much to buy</span>
+    <span class="arrow">→</span>
+    <span class="chip"><span class="dot" style="background:var(--orange)"></span>Tomorrow: the power is used</span>
+  </div>
+  <div class="row">
+    <div class="card col" data-s="1" style="min-height:260px">
+      <span class="tag">QUESTION 1</span>
+      <h2 style="font-size:30px;margin:12px 0 10px">Which forecast could we actually use?</h2>
+      <p class="small" style="font-size:21px">A new wind forecast is published about 8 times a day. Only the runs published before the decision count.</p>
+    </div>
+    <div class="card col" data-s="2" style="min-height:260px">
+      <span class="tag">QUESTION 2</span>
+      <h2 style="font-size:30px;margin:12px 0 10px">How good are the forecasts?</h2>
+      <p class="small" style="font-size:21px">Can the team trust them, and how far off are they, and in which direction?</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · what the pilot did -->
+<section class="slide" id="pilot">
+  <div class="eyebrow">The pilot</div>
+  <h2>Real public data, one month, two questions</h2>
+  <p class="lead" style="font-size:22px">Elexon BMRS data, for purchase decisions made in January 2026</p>
+  <div class="row" style="margin-top:30px" data-s="1">
+    <div class="card col"><div class="big blue" style="font-size:80px">768</div><p class="small" style="margin-top:8px;font-size:19px">hours checked</p></div>
+    <div class="card col"><div class="big blue" style="font-size:80px">32</div><p class="small" style="margin-top:8px;font-size:19px">delivery days</p></div>
+    <div class="card col"><div class="big blue" style="font-size:80px">280</div><p class="small" style="margin-top:8px;font-size:19px">forecast runs compared</p></div>
+  </div>
+  <div class="row" style="margin-top:26px" data-s="2">
+    <div class="card col"><span class="tag">FUELHH</span><p style="margin-top:10px;font-size:20px"><b>Actual wind power</b>, every half hour</p></div>
+    <div class="card col"><span class="tag">WINDFOR</span><p style="margin-top:10px;font-size:20px"><b>Wind forecast</b>, hourly values, about 8 runs a day</p></div>
+    <div class="card col" style="background:#f4f2ec"><span class="tag">NOTHING ELSE</span><p style="margin-top:10px;font-size:20px">No demand, no prices</p></div>
+  </div>
+</section>
+
+<!-- 4 · recap + next steps -->
+<section class="slide" id="recap1">
+  <div class="eyebrow">What the pilot delivers</div>
+  <h2>A portal that answers both questions</h2>
+  <div data-s="1">
+    <div class="card" style="display:flex;gap:18px;align-items:center;margin-bottom:12px;padding:20px 26px"><span class="big blue" style="font-size:36px;width:44px">1</span><p style="font-size:25px"><b>The newest forecast your team could use</b>, at any decision time</p></div>
+    <div class="card" style="display:flex;gap:18px;align-items:center;margin-bottom:12px;padding:20px 26px"><span class="big red" style="font-size:36px;width:44px">2</span><p style="font-size:25px"><b>How wrong it has been:</b> too high by 1.8 GW on average, in 85% of hours</p></div>
+    <div class="card" style="display:flex;gap:18px;align-items:center;padding:20px 26px"><span class="big orange" style="font-size:36px;width:44px">3</span><p style="font-size:25px"><b>A safer number to plan with:</b> "wind to count on"</p></div>
+  </div>
+  <div data-s="2" style="margin-top:24px">
+    <span class="tag">GOOD NEXT STEPS</span>
+    <p style="font-size:25px;margin-top:10px">More months of data &nbsp;·&nbsp; Demand and price data &nbsp;·&nbsp; Why does the forecast lean high?</p>
+  </div>
+</section>
+
+<!-- 5 · title, part 2 -->
+<section class="slide dark title" id="title2">
+  <div style="position:absolute;left:56px;top:150px;right:56px">
+    <div class="eyebrow">Tech review · Part 2 of 2</div>
+    <h1>How it is built</h1>
+    <p class="lead">Architecture, design, analysis, code base and key practices</p>
+    <div data-s="1" style="margin-top:34px;display:flex;gap:14px;flex-wrap:wrap">
+      <span class="chip" style="background:var(--navy2);border-color:#2b4466;color:#f4f6f9">1 Architecture</span>
+      <span class="chip" style="background:var(--navy2);border-color:#2b4466;color:#f4f6f9">2 Design</span>
+      <span class="chip" style="background:var(--navy2);border-color:#2b4466;color:#f4f6f9">3 Analysis</span>
+      <span class="chip" style="background:var(--navy2);border-color:#2b4466;color:#f4f6f9">4 Code base</span>
+      <span class="chip" style="background:var(--navy2);border-color:#2b4466;color:#f4f6f9">5 Practices</span>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · architecture -->
+<section class="slide" id="arch">
+  <div class="eyebrow">Architecture</div>
+  <h2>React, FastAPI and one data file</h2>
+  <div style="display:grid;grid-template-columns:1fr 120px 1fr 120px 1fr;align-items:center;row-gap:18px;margin-top:6px">
+    <div class="box" data-s="1" style="border-color:var(--blue)"><h3>Browser</h3><p>React + TypeScript (Vite). Hand-written SVG charts, a table for every chart.</p></div>
+    <div class="arrow" data-s="2">/api<br>JSON →</div>
+    <div class="box" data-s="2" style="border-color:var(--orange)"><h3>Back end</h3><p>Python, FastAPI. Pure Python maths, no database. Two packages listed for production.</p></div>
+    <div class="arrow" data-s="3">reads →</div>
+    <div class="box" data-s="3" style="border-color:var(--green)"><h3>Snapshot file</h3><p class="mono" style="font-size:14px">data/elexon/wind_snapshot.json</p><p>1,536 half-hours of wind, 280 forecast runs</p></div>
+
+    <div></div><div></div><div></div><div></div>
+    <div class="arrow" data-s="4">↑ writes</div>
+
+    <div></div><div></div>
+    <div class="box" data-s="4" style="border-style:dashed"><h3>Elexon BMRS API</h3><p>FUELHH (actual wind) and WINDFOR (wind forecast)</p></div>
+    <div class="arrow" data-s="4">fetched by →</div>
+    <div class="box" data-s="4" style="border-style:dashed"><h3 class="mono" style="font-size:15px">python -m app.wind.ingest</h3><p>Stops on a gap, a conflicting duplicate, a non-hourly run, or a dropped row</p></div>
+  </div>
+</section>
+
+<!-- 7 · the key rule -->
+<section class="slide" id="rule">
+  <div class="eyebrow">Design</div>
+  <h2 style="margin-bottom:10px;font-size:32px">Key rule: the newest run published at or before the decision</h2>
+  <div class="card" style="padding:12px 20px 8px">
+    <svg viewBox="0 0 1160 130" width="1160" height="130" style="display:block">
+      <!-- axis: Sunday 11 Jan, 00:00 to 12:00 UK time; x = 40 + hours * 90 -->
+      <line x1="40" y1="78" x2="1120" y2="78" stroke="#c9c5b8" stroke-width="2"/>
+      <g font-size="14" fill="#59616a" text-anchor="middle">
+        <text x="40" y="106">00:00</text><text x="310" y="106">03:00</text><text x="580" y="106">06:00</text><text x="850" y="106">09:00</text><text x="1120" y="106">12:00</text>
+      </g>
+      <g data-s="1" class="runs">
+        <g><circle cx="265" cy="78" r="9" fill="#2a78d6" opacity=".45"/><text x="265" y="58" font-size="14" fill="#59616a" text-anchor="middle">02:30</text></g>
+        <g><circle cx="445" cy="78" r="9" fill="#2a78d6" opacity=".45"/><text x="445" y="58" font-size="14" fill="#59616a" text-anchor="middle">04:30</text></g>
+        <g><circle cx="715" cy="78" r="9" fill="#2a78d6" opacity=".45"/><text x="715" y="58" font-size="14" fill="#59616a" text-anchor="middle">07:30</text></g>
+        <g><circle cx="895" cy="78" r="9" fill="#9aa1a9" opacity=".55"/><text x="912" y="58" font-size="14" fill="#59616a" text-anchor="start">09:30</text></g>
+        <g><circle cx="1075" cy="78" r="9" fill="#9aa1a9" opacity=".55"/><text x="1075" y="58" font-size="14" fill="#59616a" text-anchor="middle">11:30</text></g>
+        <text x="40" y="30" font-size="15" fill="#59616a">Forecast runs on Sunday 11 Jan (UK time)</text>
+      </g>
+      <g data-s="2">
+        <line x1="880" y1="18" x2="880" y2="88" stroke="#e34948" stroke-width="3"/>
+        <text x="890" y="30" font-size="15" font-weight="700" fill="#e34948" text-anchor="start">decision 09:20</text>
+        <circle cx="715" cy="78" r="12" fill="#2a78d6" stroke="#fff" stroke-width="3"/>
+        <text x="715" y="34" font-size="15" font-weight="700" fill="#2a78d6" text-anchor="middle">used: 07:30</text>
+        <text x="895" y="126" font-size="14" fill="#59616a" text-anchor="middle">10 min too late</text>
+      </g>
+    </svg>
+  </div>
+  <div class="row" style="margin-top:14px">
+    <div class="card col" data-s="3" style="flex:2.5;padding:12px 18px;background:#14181d;border-color:#14181d">
+      <pre style="margin:0;font-size:12.5px;line-height:1.55;color:#e6e9ee;white-space:pre">def latest_forecast(self, target: datetime, cutoff: datetime) -> tuple[Publication, float] | None:
+    """The most recent publication at or before `cutoff` that has a value for `target`."""
+    index = bisect_right(self._publish_times, cutoff)
+    for publication in reversed(self.publications[:index]):
+        value = publication.value_at(target)
+        if value is not None:
+            return publication, value
+    return None</pre>
+      <p class="small" style="color:#8e99a8;font-size:13px;margin-top:6px">backend/app/wind/dataset.py</p>
+    </div>
+    <div class="card col" data-s="4" style="flex:1;padding:14px 18px">
+      <p style="font-size:21px;font-weight:700">error = forecast − actual</p>
+      <p class="small" style="margin-top:6px;font-size:15px">Positive: forecast too high (wind came in lower).<br>Hourly forecast vs half-hourly wind: same start time. Other pairings move the error by under 2%.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · analysis -->
+<section class="slide" id="analysis">
+  <div class="eyebrow">Analysis</div>
+  <h2 style="margin-bottom:14px">What the numbers say, and how far to trust them</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div class="card" data-s="1" style="padding:14px 20px">
+      <span class="tag">PLANNING RANGE</span>
+      <p style="font-size:17px;margin:8px 0 6px">Past error (forecast − actual) by forecast size, GW</p>
+      <svg viewBox="0 0 470 118" width="100%" height="118">
+        <g font-size="12" fill="#59616a" text-anchor="middle">
+          <rect x="30" y="88" width="68" height="0" fill="#e34948"/>
+          <rect x="30" y="76" width="68" height="12" fill="#e34948"/><text x="64" y="70">+0.5</text><text x="64" y="112">under 9.2</text>
+          <rect x="140" y="52" width="68" height="36" fill="#e34948"/><text x="174" y="46">+1.7</text><text x="174" y="112">9.2–13.3</text>
+          <rect x="250" y="54" width="68" height="34" fill="#e34948"/><text x="284" y="48">+1.6</text><text x="284" y="112">13.3–17.8</text>
+          <rect x="360" y="14" width="68" height="74" fill="#e34948"/><text x="394" y="10">+3.5</text><text x="394" y="112">17.8 or more</text>
+        </g>
+        <line x1="20" y1="88" x2="450" y2="88" stroke="#c9c5b8"/>
+      </svg>
+      <p class="small" style="font-size:14px">Middle 80% of past errors per group, blended smoothly between groups</p>
+    </div>
+    <div class="card" data-s="2" style="padding:14px 20px">
+      <span class="tag">CHECK</span>
+      <div style="display:flex;align-items:baseline;gap:12px;margin-top:10px"><span class="big blue">78.4%</span><span class="small" style="font-size:18px">of outturns fall inside the 80% range</span></div>
+      <p class="small" style="margin-top:14px;font-size:16px">The day being viewed is left out of its own range. A test keeps coverage between 72% and 88%.</p>
+    </div>
+    <div class="card" data-s="3" style="padding:14px 20px">
+      <span class="tag">VS A SIMPLE GUESS</span>
+      <svg viewBox="0 0 470 96" width="100%" height="96" style="margin-top:6px">
+        <g font-size="13" fill="#17191c">
+          <text x="0" y="26">Forecast</text><rect x="110" y="10" width="170" height="24" rx="4" fill="#2a78d6"/><text x="290" y="28" font-weight="700">2.0 GW typical miss</text>
+          <text x="0" y="74">Persistence</text><rect x="110" y="58" width="344" height="24" rx="4" fill="#9aa1a9"/><text x="116" y="76" font-weight="700" fill="#fff">4.1 GW typical miss</text>
+        </g>
+      </svg>
+      <p class="small" style="font-size:14px">Persistence = hold the last known wind flat. Mean absolute error, 744 hours.</p>
+    </div>
+    <div class="card" data-s="4" style="padding:14px 20px;background:#fff8ec;border-color:#ecd7ae">
+      <span class="tag" style="background:#f6e6c3;color:var(--amber)">LIMITS</span>
+      <ul class="tight" style="font-size:17px;margin-top:8px;line-height:1.5"><li>One winter month, one source</li><li>The range uses later days: it describes this window</li><li>The cause of the +1.8 GW bias is not visible in this data</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · code base -->
+<section class="slide" id="repo">
+  <div class="eyebrow">Code base</div>
+  <h2 style="margin-bottom:14px">Where things live</h2>
+  <div class="card" style="padding:16px 22px">
+    <pre style="margin:0;font-size:17px;line-height:1.6;color:#17191c"><span data-s="1" style="display:block"><b>backend/app/wind/</b>
+  scope.py       the January window, decision-time presets
+  elexon.py      fetch and validate FUELHH / WINDFOR
+  ingest.py      build the snapshot file
+  dataset.py     load it; "latest forecast at a cutoff"
+  analytics.py   decision view, accuracy view, planning range
+  schemas.py     response models        routes.py   /api endpoints
+<b>backend/tests/</b>  test_wind_*.py, test_vercel_config.py</span><span data-s="2" style="display:block"><b>frontend/src/</b>   views/ (Decision, Accuracy, Method)   charts/ (hand-written SVG)
+<b>frontend/e2e/</b>   interact.cjs, 19 browser checks
+<b>data/elexon/</b>    wind_snapshot.json
+<b>docs/</b> and top-level files:  APP_DESIGN, DECISIONS, BUG_LOG, TEST_REPORT, README</span></pre>
+  </div>
+</section>
+
+<!-- 10 · practices -->
+<section class="slide" id="practices">
+  <div class="eyebrow">Key practices</div>
+  <h2>How we know it works</h2>
+  <div class="row">
+    <div class="card col" data-s="1" style="min-height:290px">
+      <span class="tag">TESTS</span>
+      <div style="margin-top:12px"><span class="big blue" style="font-size:54px">219</span> <span class="small" style="font-size:19px">Python tests</span></div>
+      <div style="margin-top:6px"><span class="big blue" style="font-size:54px">19</span> <span class="small" style="font-size:19px">front-end tests</span></div>
+      <p class="small" style="margin-top:14px;font-size:16px">API tests recompute each figure from the raw snapshot in a separate way.</p>
+    </div>
+    <div class="card col" data-s="2" style="min-height:290px">
+      <span class="tag">BREAK IT ON PURPOSE</span>
+      <div style="margin-top:12px"><span class="big orange" style="font-size:54px">8 of 8</span></div>
+      <p class="small" style="margin-top:8px;font-size:19px">deliberate bugs caught by the tests</p>
+      <p class="small" style="margin-top:14px;font-size:16px">One survived at first (the range used P80 instead of P90). A new test now catches it.</p>
+    </div>
+    <div class="card col" data-s="3" style="min-height:290px">
+      <span class="tag">CHECKS AND RECORDS</span>
+      <div style="margin-top:12px"><span class="big green" style="font-size:54px">19</span> <span class="small" style="font-size:19px">browser checks</span></div>
+      <p class="small" style="margin-top:6px;font-size:16px">Run on the local build, in Docker, and on the live site.</p>
+      <p class="small" style="margin-top:14px;font-size:16px">Pinned versions. DECISIONS.md, BUG_LOG.md and TEST_REPORT.md are kept up to date.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 11 · run and ship -->
+<section class="slide" id="run">
+  <div class="eyebrow">Run it, ship it</div>
+  <h2>One command locally, Vercel online</h2>
+  <div class="row">
+    <div class="card col" data-s="1" style="min-height:250px">
+      <span class="tag">ON YOUR COMPUTER</span>
+      <pre style="margin:14px 0 0;font-size:19px;background:#14181d;color:#e6e9ee;border-radius:10px;padding:14px 16px">docker compose up --build</pre>
+      <p class="small" style="margin-top:14px;font-size:18px">Web: localhost:8080<br>API: localhost:8000 (docs at /api/docs)</p>
+    </div>
+    <div class="card col" data-s="2" style="min-height:250px">
+      <span class="tag">ON THE INTERNET</span>
+      <p style="margin-top:14px;font-size:20px;line-height:1.45">Vercel serves the React build as <b>static files</b> and runs the Python app as <b>one function</b>. <span class="mono" style="font-size:16px">/api/*</span> is rewritten to it.</p>
+      <p class="small" style="margin-top:12px;font-size:17px">wind-intelligence.vercel.app</p>
+    </div>
+  </div>
+  <div class="card" data-s="3" style="margin-top:18px;background:#fff8ec;border-color:#ecd7ae;padding:14px 22px">
+    <p style="font-size:20px"><b style="color:var(--amber)">Two honest notes:</b> the Vercel project is not linked to GitHub, so a push does not redeploy it. There is no automatic test pipeline (CI) yet.</p>
+  </div>
+</section>
+
+<!-- 12 · close -->
+<section class="slide dark" id="close">
+  <div class="eyebrow">Limits and credits</div>
+  <h2 style="font-size:40px;margin-top:10px">Know the limits</h2>
+  <div data-s="1" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px">
+    <span class="chip" style="background:var(--navy2);border-color:#2b4466;color:#f4f6f9">One month</span>
+    <span class="chip" style="background:var(--navy2);border-color:#2b4466;color:#f4f6f9">One data source</span>
+    <span class="chip" style="background:var(--navy2);border-color:#2b4466;color:#f4f6f9">No demand or price</span>
+    <span class="chip" style="background:var(--navy2);border-color:#2b4466;color:#f4f6f9">Cause of the bias unknown</span>
+  </div>
+  <div data-s="2" style="margin-top:44px;max-width:900px">
+    <p style="font-size:26px;line-height:1.45">Built with an AI coding assistant: <b>Claude Code</b>, from Anthropic.</p>
+    <p style="font-size:26px;line-height:1.45;margin-top:8px">The voice in this video is computer generated.</p>
+    <p class="lead" style="margin-top:34px;font-size:22px">Live app: wind-intelligence.vercel.app</p>
+  </div>
+</section>
+
+<script>
+  const params = new URLSearchParams(location.search);
+  const name = params.get("slide") || "title1";
+  const el = document.getElementById(name);
+  if (el) el.classList.add("on");
+  // step(n) reveals every element whose data-s is <= n (the recorder calls it)
+  window.step = (n) => {
+    document.body.dataset.step = n;
+    el.querySelectorAll("[data-s]").forEach((e) => { if (Number(e.dataset.s) <= n) e.classList.add("shown"); });
+  };
+  // the dark slides must be dark immediately: the recorder syncs audio to the first dark frame
+  document.documentElement.style.background = el && el.classList.contains("dark") ? "#0e1a2b" : "#fbfaf7";
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+Wind Intelligence - demo video (8:54)
+
+Part 1 (4:07): pilot results shown to the customer. The portal, the analysis, what it means for a day-ahead buying team.
+Part 2 (4:46): technical review for the tech lead. Architecture, design, analysis, code base and key development practices.
+
+Live app: https://wind-intelligence.vercel.app
+Data: Elexon BMRS FUELHH (wind outturn) and WINDFOR (wind forecast), decisions made in January 2026.
+Built with an AI coding assistant (Claude Code, Anthropic). The narration voice is computer generated.
+
+Chapters
+0:00 Part 1 - Pilot results for the customer
+0:14 The problem
+0:39 What the pilot did
+1:02 Decision view: the forecast at decision time
+2:06 The chart, table and forecast runs
+2:38 Forecast accuracy
+3:29 Method and limits
+3:46 Summary and next steps
+4:07 Part 2 - Tech review
+4:19 Architecture
+4:58 Design: the key rule
+5:38 Analysis
+6:23 API walkthrough
+6:57 Code base
+7:37 Key practices
+8:08 Run it and deploy it
+8:33 Limits and credits

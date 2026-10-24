@@ -7,3 +7,11 @@ data/interim/*
 !data/interim/.gitkeep
 node_modules/
 frontend/dist/
+
+# demo video: the MP4 and the build working folders stay local (the video is uploaded to YouTube)
+demo/out/
+demo/build/models/
+demo/build/work/
+demo/build/rec/
+demo/build/final/
+demo/build/venv/
