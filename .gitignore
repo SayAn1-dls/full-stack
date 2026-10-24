@@ -5,3 +5,5 @@ __pycache__/
 # regenerable pipeline staging area
 data/interim/*
 !data/interim/.gitkeep
+node_modules/
+frontend/dist/

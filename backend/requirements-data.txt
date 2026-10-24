@@ -1,0 +1,6 @@
+# Only needed for the NESO historic-demand data pipeline (backend/app/data), not for the wind app.
+pandas==3.0.5
+numpy==2.5.3
+pyarrow==26.0.0
+holidays==0.107
+tzdata

@@ -16,6 +16,20 @@ failure was diagnosed and the wrong side was fixed.
 | BUG-008 | test | `test_negative_flows_keep_their_sign` failed for `greenlink_flow` | Wrong assumption: a constant-0 column cannot have negatives | Test excludes it and asserts it is all 0 |
 | BUG-009 | process | A placeholder expression and a stub function were left in `reference_checks.py` and a test after an edit | Careless edit | Removed immediately; `grep` for `if False` / the stub name is clean and the suite passes without them |
 
+### Wind app (found while building it)
+
+| ID | Where | What happened | Cause | Fix and regression guard |
+|---|---|---|---|---|
+| BUG-010 | product | `build_error_model` crashed with "quantile of an empty sample" on a constant forecast | Tied forecast values made every quartile edge equal and left empty buckets | Edges are de-duplicated and empty buckets merged; `test_regression_tied_forecasts_do_not_leave_empty_buckets` |
+| BUG-011 | product | Accuracy view crashed with too few samples | A single open-ended bucket had no label (`None / 1000`) | "all forecast levels" label; `test_regression_single_bucket_has_a_label_and_a_view` |
+| BUG-012 | product (silent data loss) | At a 00:00 cutoff the API returned 22 hours and said nothing | The newest run only looks ~46.5 h ahead, so the last two hours had no forecast and were skipped silently | `hours_without_forecast` in the API, a UI notice, tests (API and Playwright) |
+| BUG-013 | product (UX) | The planning band had a visible notch around 14:00 | Hard quartile buckets: the band jumped when the forecast crossed an edge | Interpolation between bucket centres; `test_interval_changes_smoothly_across_a_bucket_edge` |
+| BUG-014 | UI | Axis unit label overlapped the top tick; histogram reference labels overlapped; x ticks collided on a phone | Fixed offsets, no tick thinning | Layout fixes, `thin()` with unit tests, re-checked by screenshots at desktop and 390px |
+| BUG-015 | UI copy and my reading | Subtitles said "the whole distribution sits right of zero" and "the bigger the forecast, the bigger the over-forecast"; I also misread the bias-removal metric as "87% systematic" | Over-claiming; bias/MAE is not the same as the share of error a constant correction removes | Copy made precise (85% of hours; "top quartile"); the correct reading is that removing the bias cuts MAE by about a third (2,091 to 1,416 MW) |
+| BUG-016 | test gap | Mutation testing: changing the band's P90 to P80 survived | Tests only checked that the edges were ordered | `test_regression_band_edges_are_exactly_the_stated_percentiles` and the real-data calibration test (78.4% coverage); the mutation is now caught |
+| BUG-017 | test | Two assertions ended in `or True` and one test was named for a 404 but asserted a 200 | Careless edits, found on review | Replaced with real assertions; `grep "or True" backend/tests` is clean |
+| BUG-018 | test | Wrong assumption that every WINDFOR run looks 60+ hours ahead; a Playwright hover landed off-screen; a route-path assertion broke on FastAPI 0.162 internals | Assumptions about the data and tools | Reach asserted as 46.5-66.5 h from the data; chart scrolled into view; assertion via the OpenAPI schema |
+
 Core cleaning logic (timestamps, zero-nulling, flags, structural NA, uniqueness, completeness) had no defect surfaced by the
 test suite. Mutation checks confirm the tests can fail: ignoring DST, dropping the `tsd` rule, filling unpublished columns with 0,
 an off-by-one threshold, and over-nulling on real data were each caught (see TEST_REPORT.md).

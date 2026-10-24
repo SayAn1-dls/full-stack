@@ -2,3 +2,4 @@
 data/raw/** -text
 data/processed/** -text
 backend/app/data/reference/** -text
+data/elexon/** -text

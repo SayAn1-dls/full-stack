@@ -9,14 +9,13 @@ URLs actually used are recorded in D-02.
 `backend/app/data/` and its tests at `backend/tests/`, as the brief says to do when a layout exists; `data/` and `docs/` sit at the
 root. The dashboard can grow around this without moving files. Run commands from `backend/`.
 
-**D-18 The optional "hook into Wind Intelligence" (brief Section 8) was not built.** The PRD limits the application to Elexon
-FUELHH/WINDFOR wind actuals and forecasts, "no other data beyond this"; serving NESO demand in the app would break that scope. The
-brief's own Section 2 says the same (supporting dataset, never charted as forecast/actual wind). No app exists in the repo yet either.
-Reversible: the clean parquet is ready to be served read-only if the scope changes.
+**D-18 NESO demand data is not wired into the wind app.** The PRD limits the application to Elexon FUELHH/WINDFOR wind actuals and forecasts, "no other data beyond this";
+serving NESO demand in the app would break that scope, and the brief's own Section 2 says the same (supporting dataset, never charted as forecast/actual wind). The optional
+"hook into Wind Intelligence" step was therefore not built. Reversible: the clean parquet is ready to be served read-only if the scope changes.
 
-**D-21 Nothing outside the data pipeline was built.** The PRD also asks for the dashboard, Docker packaging, a Vercel/Heroku deployment, a
-demo video, an anonymous public repo name and a submission form. None were requested in this task and none were done. The README says so
-and gives no deployed-app link (there is none).
+**D-21 What was and was not built from the PRD.** Built: the React front end, the Python (FastAPI) back end, Docker packaging and a Vercel deployment (see D-24 to D-36).
+Not built, because they are not code in this repository or need the user: the recorded demo video, creating a separately named *anonymous* public repository, the submission form,
+and a Heroku deployment (Vercel was chosen; the PRD says "Vercel or Heroku").
 
 ## Inputs
 
@@ -92,3 +91,40 @@ files under ODbL 1.0 (attribution in `data/README.md`). Reversible: if repo size
 **D-20 Dependencies are pinned** to the versions verified here (pandas 3.0.5, pyarrow 26, holidays 0.107, Python 3.13). pandas 3 changed string and datetime defaults; the code and tests assume it.
 
 **D-23 Tests fail, not skip, when raw files are missing.** The real-data suite is marked `data`; a missing raw file fails with the fix command. Run `pytest -m "not data"` for the fast suite.
+
+## Wind app (React + FastAPI) - added with the deployment request
+
+**D-24 Scope window.** "Purchase decisions to be made in January 2026": decisions on 1-31 January give delivery days 2 January - 1 February; delivery on 1 January (decided 31 December) is
+included too so every January target time is covered, and the UI labels it. One constant file (`backend/app/wind/scope.py`) holds the window.
+
+**D-25 Decision cutoff.** The PRD says only "one day before the delivery day". Default 09:20 UK time on D-1 (EPEX GB day-ahead gate closure), preset 09:50 (N2EX), free time input. Sources: Nord Pool support page
+(N2EX 09:50) and EPEX (10:20 CET = 09:20 UK); a 2020 trade-press note says 09:40 for N2EX, hence "editable". The forecast "available" is the newest WINDFOR run published at or before the cutoff, per hour.
+
+**D-26 Alignment of hourly forecast and half-hourly outturn.** Compare the forecast for start time T with the outturn whose start time is T (the literal PRD reading). Tested alternatives (T+30, hourly mean, T-30..T, centred)
+move MAE between 2,060 and 2,105 MW (<2%), so the choice does not drive any conclusion; this is stated on the Method page.
+
+**D-27 Error = forecast - outturn** (positive = forecast too high = wind came in below it, the costly side for a buyer). Red = over-forecast, blue = under-forecast everywhere.
+
+**D-28 A committed snapshot, not live Elexon calls.** January 2026 is history. The 147 KB snapshot makes cold starts network-free and the app immune to Elexon outages; `python -m app.wind.ingest` rebuilds it and fails on gaps, conflicting
+duplicates, non-hourly runs or any row it would drop. Reversible: `routes.py` could call the client instead.
+
+**D-29 Pure-Python analytics, minimal API dependencies.** No pandas/numpy in the API, so the serverless bundle is FastAPI plus a few tens of KB. Requirements are split: `requirements.txt` (deployed API), `backend/requirements.txt` (adds uvicorn),
+`backend/requirements-data.txt` (NESO pipeline only), `backend/requirements-dev.txt` (everything plus pytest/httpx).
+
+**D-30 Planning band.** P10-P90 of past error for forecasts of a similar size: data-driven quartiles of the forecast, interpolated linearly between quartile centres (hard steps made the plotted band jump), the viewed day excluded from its own band.
+It is in-sample for the window (uses later days) and says so. Calibration check on the real data: the band contains 78.4% of outturns (nominal 80%), pinned by a test.
+
+**D-31 No procurement volume.** With wind data only, the app reports "wind to count on" (the band's lower edge) and the error statistics. It does not invent a total buy volume; the Method page says why.
+
+**D-32 Hand-written SVG charts, no chart library.** The dataviz spec (2px lines, <=24px bars with a 4px rounded end and 2px gap, ringed markers, snapping crosshair, 24px scatter reach, table twin for every chart, light/dark steps) needed fine control,
+and it keeps the front end to React alone (265 KB, 82 KB gzipped). Palette validated with the dataviz validator in both modes (all PASS).
+
+**D-33 Missing hours are shown as missing.** At a very early cutoff the newest run does not reach the end of the delivery day (a 22:30 run looks 46.5 h ahead). The API lists `hours_without_forecast`, the chart leaves them blank and a notice explains; nothing is estimated.
+
+**D-34 Vercel deployment by direct file upload, not Git.** The connected Vercel team has no write access to `SayAn1-dls/full-stack` (`repo_no_access`), so the project is not Git-linked: pushes to GitHub do **not** redeploy. To redeploy, upload again or link the repository from an account with access.
+The data snapshot's SHA-256 is exposed by `/api/health` so a deployment can be checked against the committed file. The project is `wind-intelligence` in team `tathagat-harshs-projects`, the account the user confirmed.
+
+**D-35 Docker was verified in the sandbox with local shim base images.** The sandbox re-terminates TLS and rate-limits Docker Hub, so builds used local base images that trust the sandbox CA (and a Google mirror of the same node/nginx images). The repository
+Dockerfiles are unchanged and portable; TLS verification was never disabled.
+
+**D-36 Python 3.12 is the compatibility target** (a likely serverless default); the full suite (206 tests at that point) was run on 3.12.15 in a clean container as well as on 3.13.

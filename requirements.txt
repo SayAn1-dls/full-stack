@@ -1,0 +1,4 @@
+# Runtime dependencies of the wind API as deployed (Vercel serverless function and the Docker image).
+# Deliberately tiny: the analytics are pure Python, so no pandas/numpy in the deployed bundle.
+fastapi==0.162.0
+tzdata==2026.5
